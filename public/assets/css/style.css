@@ -719,8 +719,9 @@ input:focus {
     align-items: center;
 }
 .srex-info-box__item__img img {
-    height: 45px;
-    width: 45px;
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
 }
 .srex-info-box__item__number {
     -webkit-text-stroke: 1px #232434;
@@ -1890,6 +1891,47 @@ input:focus {
     top: 0;
     bottom: 0;
 }
+.vision-hero-section {
+    height: 900px;
+}
+.vision-hero-section .srex-hero-three__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: min(68%, 1120px);
+    padding-right: 0;
+    right: -120px;
+}
+.vision-hero-section .vision-hero-section__image {
+    width: auto;
+    height: 104%;
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+    transform: scale(1.08);
+    transform-origin: center right;
+}
+.vision-hero-section .srex-hero-three__left__desc + .srex-hero-three__left__desc {
+    margin-top: 16px;
+}
+@media (max-width: 991px) {
+    .vision-hero-section {
+        height: 760px;
+    }
+    .vision-hero-section .srex-hero-three__left {
+        max-width: 100%;
+        padding: 140px 0 60px;
+    }
+    .vision-hero-section .srex-hero-three__right {
+        width: min(54%, 720px);
+        padding-right: 0;
+        right: -30px;
+    }
+    .vision-hero-section .vision-hero-section__image {
+        height: 86%;
+        transform: scale(1.03);
+    }
+}
 @media (max-width: 767px) {
     .srex-hero-three__right img {
         display: none;
@@ -2480,6 +2522,28 @@ input:focus {
 }
 .srex-about-us-three .srex-tabs .tab-content .srex-icon-list p {
     font-weight: 700;
+}
+.srex-about-us-three .srex-section__head {
+    padding-top: 50px;
+}
+.founders-tabs-static > .srex-section__head__desc {
+    margin-bottom: 28px;
+}
+.founders-tabs-static__content {
+    min-height: 240px;
+}
+@media (max-width: 991px) {
+    .srex-about-us-three .srex-section__head {
+        padding-top: 16px;
+    }
+}
+@media (max-width: 767px) {
+    .founders-tabs-static__content {
+        min-height: 0;
+    }
+    .srex-about-us-three .srex-section__head {
+        padding-top: 0;
+    }
 }
 
 /*------------------------------------
@@ -7335,7 +7399,7 @@ body {
     height: 130px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #ff8a5c; /* Orange ring from your template */
+    border: 3px solid #c0dea2; /* Green ring from your template */
     padding: 5px;
     transition: transform 0.4s ease;
 }
@@ -7530,7 +7594,7 @@ body {
 }
 
 .bg-for-card {
-    background: #007a3d;
+    background: #006720;
 }
 .srex-card-border {
     border: 1px dotted #333;

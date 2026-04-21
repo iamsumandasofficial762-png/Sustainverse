@@ -17,7 +17,7 @@
     </section>
 
         <!-- content here -->
-         <section class="srex-hero-three relative">
+         <section class="srex-hero-three vision-hero-section relative">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 col-12">
@@ -26,13 +26,14 @@
 								Our <span>VISION</span>
 							</h1>
 							<p class="srex-hero-three__left__desc fs-5">
-								We envision an energy future that is clean, reliable, and accessible to all. A future where power fuels progress without costing the planet, and growth is driven by responsibility as much as innovation.
-
-                                Our vision is to accelerate the transition from fossil-based systems to renewable, low-carbon energy solutions that support economic development while safeguarding natural resources. We believe energy should empower communities, strengthen resilience, and create long-term value for generations to come.
+								We envision a future powered by clean, reliable, and accessible energy, where progress is driven by innovation, responsibility, and respect for the planet.
+							</p>
+							<p class="srex-hero-three__left__desc fs-5 mb-0">
+								Our vision is to accelerate the transition from fossil-fuel dependence to renewable, low-carbon solutions that support economic growth, protect natural resources, and create lasting value for communities and future generations.
 							</p>
 
-							<a href="" class="srex-btn srex-btn--primary">
-								Discover More <i class="fa-solid fa-plus"></i>
+							<a href="{{ route('contact.index') }}" class="srex-btn srex-btn--primary">
+								Contact Us Discover More <i class="fa-solid fa-plus"></i>
 							</a>
 						</div>
 					</div>
@@ -40,7 +41,8 @@
 						<div class="srex-hero-three__right wow ud-fade-in-right" data-wow-delay="200ms">
 							<img
 								src="{{ asset('assets/images/home-three/hero-right.png')}}"
-								alt="Man"
+								alt="Renewable energy vision illustration"
+								class="img-fluid vision-hero-section__image"
 							>
 						</div>
 					</div>

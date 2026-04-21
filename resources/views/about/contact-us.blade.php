@@ -59,12 +59,13 @@
                                             <input name="full-name" placeholder="Your Name" type="text" required>
                                         </div>
                                         <div class="col-md-12 col-12">
-                                            <input name="email" placeholder="Email Address" type="text" required>
+                                            <input name="email" placeholder="Email Address" type="email" required>
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
                                         <div class="col-md-12 col-12">
-                                            <input placeholder="Your Phone" type="text" name="phone" required>
+                                            <input placeholder="Your Phone" type="tel" name="phone" required>
+                                            
                                         </div>
                                     </div>
                                     <div>

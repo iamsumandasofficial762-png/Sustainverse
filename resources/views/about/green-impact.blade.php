@@ -69,10 +69,10 @@
                 
             </div>
         </section>
-        <section>
+        <section class="green-impact-cards">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 d-flex">
                         <div class="srex-info-box__item wow ud-fade-in-up srex-card-border" data-wow-duration="1s">
                             <div
                                 class="d-flex justify-content-between align-items-center"
@@ -81,21 +81,20 @@
                                     class="srex-info-box__item__img bg-for-card"
                                 >
                                     <img
-                                        src="{{ asset('assets/images/home-one/features/features-1.svg') }}"
+                                        src="{{ asset('assets/images/home-one/features/Core-Review-Streams.png') }}"
                                         class="srex-info-box__item__logo"
                                         alt="GreenSun Support"
                                     >
                                 </div>
                             </div>
                             <h3 class="srex-info-box__item__text">
-                                GreenSun Support
+                                Core Review Streams
                             </h3>
                             <p class="mb-3">
-                                Lorem ipsum dolor sit amet cut co
-                                sect. Proin viverra
+                                Covers key sustainability themes, analyzing practices, challenges, and innovations shaping environmental and corporate responsibility.
                             </p>
                             <div class="srex-info-box__more">
-                                <a href="service-details.html"
+                                <a href="{{ route('blog.category', 'core-review-streams') }}"
                                     >Read More
                                     <i
                                         class="fa-solid fa-arrow-right"
@@ -104,7 +103,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 d-flex">
                         <div class="srex-info-box__item wow ud-fade-in-up srex-card-border" data-wow-duration="1.3s">
                             <div
                                 class="d-flex justify-content-between align-items-center"
@@ -113,21 +112,20 @@
                                     class="srex-info-box__item__img bg-for-card"
                                 >
                                     <img
-                                    src="{{ asset('assets/images/home-one/features/features-2.svg') }}"
+                                    src="{{ asset('assets/images/home-one/features/Reporting-&-Management.png') }}"
                                         class="srex-info-box__item__logo"
                                         alt="BrightSun Support"
                                     >
                                 </div>
                             </div>
                             <h3 class="srex-info-box__item__text">
-                                BrightSun Support
+                                Reporting & Management
                             </h3>
                             <p class="mb-3">
-                                Lorem ipsum dolor sit amet cut co
-                                sect. Proin viverra
+                                A strategic approach to tracking, analyzing, and improving organizational performance through structured reporting and effective management practices.
                             </p>
                             <div class="srex-info-box__more">
-                                <a href="service-details.html"
+                                <a href="{{ route('blog.category', 'reporting-management') }}"
                                     >Read More
                                     <i
                                         class="fa-solid fa-arrow-right"
@@ -136,7 +134,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 d-flex">
                         <div class="srex-info-box__item wow ud-fade-in-up srex-card-border" data-wow-duration="1.9s">
                             <div
                                 class="d-flex justify-content-between align-items-center"
@@ -145,21 +143,20 @@
                                     class="srex-info-box__item__img bg-for-card"
                                 >
                                     <img
-                                    src="{{ asset('assets/images/home-one/features/features-4.svg') }}"
+                                    src="{{ asset('assets/images/home-one/features/Sector-Reviews.png') }}"
                                         class="srex-info-box__item__logo"
                                         alt="EcoSolar Services"
                                     >
                                 </div>
                             </div>
                             <h3 class="srex-info-box__item__text">
-                                EcoSolar Services
+                                Sector Reviews
                             </h3>
                             <p class="mb-3">
-                                Lorem ipsum dolor sit amet cut co
-                                sect. Proin viverra
+                                In-depth analysis of industries to assess sustainability performance, challenges, and opportunities for greener transformation.
                             </p>
                             <div class="srex-info-box__more">
-                                <a href="service-details.html"
+                                <a href="{{ route('blog.category', 'sector-reviews') }}"
                                     >Read More
                                     <i
                                         class="fa-solid fa-arrow-right"
