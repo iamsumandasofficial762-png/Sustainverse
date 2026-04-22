@@ -11,8 +11,9 @@
             <div class="col-lg-6 col-6 col-md-6">
                 <ul class="srex-footer__social_links">
                     <li><a href="https://www.facebook.com/share/1CY5GxaZ7B/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="https://secure.instagram.com/accounts/login/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="https://x.com/twitt_login?lang=en" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/sustainverse63/?" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://x.com/SustainVerse" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/sustain-verse-09a073405/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
                 </ul>
             </div>
         </div>

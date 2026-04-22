@@ -300,7 +300,7 @@ class BlogsController extends Controller
         // CREATE BLOG
         $blog = new Blog();
         $blog->title = $request->title;
-        $blog->content = $request->content;
+        $blog->content = $this->sanitizeEditorContent($request->content);
         $blog->author = $request->author;
         $blog->slug = $slug;
 
@@ -626,11 +626,9 @@ class BlogsController extends Controller
         }
         
         // UPDATE BLOG
-        $cleanContent = Purifier::clean($request->content);
-        
         // SAVING BLOG
         $blog->title = $request->title;
-        $blog->content = $cleanContent;
+        $blog->content = $this->sanitizeEditorContent($request->content);
         $blog->author = $request->author;
         $blog->slug = $slug;
             
@@ -732,5 +730,10 @@ class BlogsController extends Controller
         $image->move($uploadPath, $imageName);
 
         return 'uploads/editor/'.$imageName;
+    }
+
+    private function sanitizeEditorContent(string $content): string
+    {
+        return Purifier::clean($content);
     }
 }
