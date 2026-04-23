@@ -40,7 +40,7 @@
                                     <a href="">{{ $single_blog->title }}</a>
                                 </h2>
         
-                                <div class="blog-content-body">
+                                <div class="blog-content blog-content-body">
                                     {!! $single_blog->content !!}
                                 </div>
                             </div>
