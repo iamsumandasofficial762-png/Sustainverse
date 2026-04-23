@@ -90,7 +90,102 @@
 						Powering Regions. Shaping Futures.
 					</h2>
 				</div>
-				<div class="row">
+				@php
+					$regionalNewsTabs = ($regionalNewsTabs ?? collect())->values();
+				@endphp
+
+				@if ($regionalNewsTabs->isNotEmpty())
+					<div class="regional-news">
+						<ul class="nav nav-pills regional-news__tabs" id="regional-news-tabs" role="tablist">
+							@foreach ($regionalNewsTabs as $tab)
+								<li class="nav-item" role="presentation">
+									<button
+										class="nav-link {{ $loop->first ? 'active' : '' }}"
+										id="regional-news-{{ $tab['slug'] }}-tab"
+										data-bs-toggle="pill"
+										data-bs-target="#regional-news-{{ $tab['slug'] }}"
+										type="button"
+										role="tab"
+										aria-controls="regional-news-{{ $tab['slug'] }}"
+										aria-selected="{{ $loop->first ? 'true' : 'false' }}"
+									>
+										<span class="regional-news__tab-icon">
+											@if ($tab['icon'])
+												<img src="{{ asset($tab['icon']) }}" alt="{{ $tab['label'] }}">
+											@else
+												<i class="fa-solid fa-calendar-days"></i>
+											@endif
+										</span>
+										<span>{{ $tab['label'] }}</span>
+									</button>
+								</li>
+							@endforeach
+						</ul>
+
+						<div class="tab-content regional-news__content" id="regional-news-tab-content">
+							@foreach ($regionalNewsTabs as $tab)
+								@php
+									$categoryUrl = $tab['category']
+										? route('blog.category', $tab['category']->category_slug)
+										: route('blog.index');
+								@endphp
+								<div
+									class="tab-pane fade {{ $loop->first ? 'show active' : '' }}"
+									id="regional-news-{{ $tab['slug'] }}"
+									role="tabpanel"
+									aria-labelledby="regional-news-{{ $tab['slug'] }}-tab"
+									tabindex="0"
+								>
+									<div class="regional-news__panel">
+										<div class="regional-news__panel-head">
+											<div class="regional-news__title">
+												<span class="regional-news__title-icon">
+													@if ($tab['icon'])
+														<img src="{{ asset($tab['icon']) }}" alt="{{ $tab['label'] }}">
+													@else
+														<i class="fa-solid fa-calendar-days"></i>
+													@endif
+												</span>
+												<h3>{{ $tab['label'] }}</h3>
+											</div>
+
+											<!-- <a href="{{ $categoryUrl }}" class="regional-news__view-link">
+												View all <i class="fa-solid fa-chevron-right"></i>
+											</a> -->
+										</div>
+
+										<div class="regional-news__posts">
+											@forelse ($tab['posts'] as $blog)
+												<a href="{{ route('blog.single', $blog->slug) }}" class="regional-news__post">
+													<span class="regional-news__post-img">
+														<img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}">
+													</span>
+													<span class="regional-news__post-body">
+														<span class="regional-news__post-title">{{ $blog->title }}</span>
+														<span class="regional-news__post-meta">
+															{{ $blog->created_at ? $blog->created_at->diffForHumans() : 'Recently' }}
+															<span class="regional-news__dot"></span>
+															{{ $tab['label'] }}
+														</span>
+													</span>
+												</a>
+											@empty
+												<div class="regional-news__empty">
+													No posts found for {{ $tab['label'] }} yet.
+												</div>
+											@endforelse
+										</div>
+
+										<a href="{{ $categoryUrl }}" class="regional-news__more">
+											View all {{ $tab['label'] }} news <i class="fa-solid fa-chevron-right"></i>
+										</a>
+									</div>
+								</div>
+							@endforeach
+						</div>
+					</div>
+				@endif
+				<div class="row regional-flip-cards--legacy">
 					<div class="col-md-3 d-flex justify-content-center">
 						<div class="flip-card mb-3">
 							<div class="flip-card-inner">

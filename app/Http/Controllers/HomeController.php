@@ -45,6 +45,58 @@ class HomeController extends Controller
                     ->take(3)
                     ->get();
 
+        // FOR REGIONAL NEWS TABS
+        $regionalNewsTabs = collect([
+            [
+                'label' => 'India',
+                'slug' => 'india',
+                'icon' => 'assets/images/home-one/service/Flag_of_India.svg',
+            ],
+            [
+                'label' => 'UAE',
+                'slug' => 'uae',
+                'icon' => 'assets/images/home-one/service/Flag_of_the_United_Arab_Emirates.svg',
+            ],
+            [
+                'label' => 'Africa',
+                'slug' => 'africa',
+                'icon' => 'assets/images/home-one/service/africa.jpg',
+            ],
+            [
+                'label' => 'Asia',
+                'slug' => 'asia',
+                'icon' => 'assets/images/home-one/service/asia.png',
+            ],
+            [
+                'label' => 'Special Days',
+                'slug' => 'special-days',
+                'icon' => null,
+            ],
+        ])->map(function ($tab) {
+            $category = Category::where('is_deleted', 0)
+                ->where('category_slug', $tab['slug'])
+                ->first();
+
+            $posts = collect();
+
+            if ($category) {
+                $posts = Blog::with('categories')
+                    ->where('is_delete', 0)
+                    ->whereHas('categories', function ($query) use ($category) {
+                        $query->where('categories.id', $category->id);
+                    })
+                    ->orderBy('created_at', 'DESC')
+                    ->take(3)
+                    ->get();
+            }
+
+            return [
+                ...$tab,
+                'category' => $category,
+                'posts' => $posts,
+            ];
+        });
+
         // FOR PRE SELECTED BLOGS
         $sections = Home::where('id', 1)->first();
         
@@ -54,6 +106,7 @@ class HomeController extends Controller
             'secondary_post' => $secondary_post,
             'random_blogs' => $random_blogs,
             'section_blogs' => $section_blogs,
+            'regionalNewsTabs' => $regionalNewsTabs,
             'sections' => $sections,
         ]);
     }
