@@ -167,9 +167,7 @@
                         <div class="mega-grid">
                             <!-- 1st row -->
                             <div class="mega-col side-border">
-                                <a href="{{ route('coming-soon.index') }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>
-                                    SV Leadership
-                                </strong></a>
+                                <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>SV Leadership</strong></h4>
                                 
                                 <!-- SUB CATEGORIES -->
                                 <a href="{{ route('coming-soon.index') }}">
@@ -178,9 +176,7 @@
                             </div>
 
                             <div class="mega-col side-border">
-                                <a href="{{ route('coming-soon.index') }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>
-                                    Conversations
-                                </strong></a>
+                                <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Conversations</strong></h4>
                                 
                                 <!-- SUB CATEGORIES -->
                                 <a href="{{ route('coming-soon.index') }}">
@@ -189,9 +185,7 @@
                             </div>
 
                             <div class="mega-col side-border">
-                                <a href="{{ route('coming-soon.index') }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>
-                                    Ongoing Voices
-                                </strong></a>
+                                <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Ongoing Voices</strong></h4>
                                 
                                 <!-- SUB CATEGORIES -->
                                 <a href="{{ route('blog.index') }}">
@@ -259,7 +253,7 @@
                                     <!-- 1st row -->
 
                                     <div class="mega-col side-border">
-                                        <a href="{{ route('coming-soon.index') }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>Flagship</strong></a>
+                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Flagship</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
@@ -272,7 +266,7 @@
                                     </div>
 
                                     <div class="mega-col side-border">
-                                        <a href="{{ route('coming-soon.index') }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>Recognition</strong></a>
+                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Recognition</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
@@ -285,7 +279,7 @@
                                     </div>
 
                                     <div class="mega-col side-border">
-                                        <a href="{{ route('coming-soon.index') }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>Others’ Events</strong></a>
+                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Others’ Events</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
@@ -321,7 +315,7 @@
                                 <div class="mega-grid">
                                     <!-- 1st row -->
                                     <div class="mega-col side-border">
-                                        <a href="{{ route('coming-soon.index') }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>Learn</strong></a>
+                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Learn</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
@@ -336,7 +330,7 @@
                                     </div>
 
                                     <div class="mega-col side-border">
-                                        <a href="{{ route('coming-soon.index') }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>Work</strong></a>
+                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Work</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
