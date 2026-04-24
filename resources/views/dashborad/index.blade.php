@@ -335,7 +335,138 @@
 			</div>
 		</section>
 
-		<!-- Service Start -->
+		<!-- About US Start-->
+		<section class="srex-about-us-one srex-section dashboard-about-us">
+			<div class="srex-about-us-one__container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 col-12">
+						<div class="srex-about-us-one__left text-left">
+							<div class="srex-section__head">
+								<h5 class="srex-section__head__badge wow ud-fade-in-up" data-wow-delay="200ms">
+									<img
+										src="assets/images/badge-icon.svg"
+										alt="Badge Icon"
+									>
+									About US
+								</h5>
+								<h2 class="srex-section__head__title wow ud-fade-in-up" data-wow-delay="200ms">
+									Powering a Greener Future, One Ray at a Time
+								</h2>
+								<p class="srex-section__head__desc wow ud-fade-in-up" data-wow-delay="200ms">
+									We transform sunlight into sustainable power solutions that help cities grow cleaner, businesses operate smarter, and communities thrive responsibly.
+								</p>
+
+								<div class="srex-icon-list wow ud-fade-in-up" data-wow-delay="200ms">
+									<ul>
+										<li>
+											<i class="fa-solid fa-check"></i>
+											<p>
+												Driving Innovation in Renewable Energy
+											</p>
+										</li>
+										<li>
+											<i class="fa-solid fa-check"></i>
+											<p>Delivering Smart, Scalable Solar Solutions</p>
+										</li>
+										<li>
+											<i class="fa-solid fa-check"></i>
+											<p>
+												Building Sustainable Systems for Tomorrow
+											</p>
+										</li>
+									</ul>
+								</div>
+
+								<a href="{{ route('coming-soon.index') }}" class="srex-btn srex-btn--outline wow ud-fade-in-up" data-wow-delay="200ms">
+									Read More <i class="fa-solid fa-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-12 px-0">
+						<div class="srex-about-us-one__right">
+							<img
+								src="assets/images/about-us/about-us.png"
+								alt="About Us"
+								class="srex-about-us-one__right__img wow ud-fade-in-up" data-wow-delay="200ms"
+							>
+							<div>
+								<div class="srex-about-us-one__right__box d-flex gap-3 wow fadeInUp" data-wow-duration="1.3s">
+									<img
+										src="assets/images/about-us/medal.png"
+										alt="Medal"
+									>
+									<div class="srex-about-us-one__right__box__text">
+										<h2>15+</h2>
+										<p>Years of experience</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- About US End-->
+
+
+		<!-- About US Bottom Start-->
+		<section class="srex-section-bottom srex-section">
+			<div class="container">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-lg-6 col-12">
+						<div class="srex-section-bottom__left wow ud-fade-in-up" data-wow-delay="200ms">
+							<img
+								src="assets/images/about-us/Shape.png"
+								alt="Shape"
+							>
+							<img
+								class="srex-section-bottom__left__img"
+								src="assets/images/about-us/about-us-bottom.png"
+								alt="about-us-bottom-img"
+							>
+						</div>
+					</div>
+					<div class="col-lg-6 col-12">
+						<div class="srex-section-bottom__right">
+							<div class="mb-5">
+								<h3 class="srex-section-bottom__right__title wow ud-fade-in-up" data-wow-delay="200ms">
+									Nature-Powered Solutions for a Sustainable Future
+								</h3>
+								<p class="srex-section-bottom__right__desc wow ud-fade-in-up" data-wow-delay="300ms">
+									We design scalable energy systems that reduce environmental impact while delivering long-term operational efficiency.
+								</p>
+							</div>
+							<div class="srex-icon-list srex-icon-list--multi-text">
+								<ul>
+									<li class="wow ud-fade-in-up" data-wow-delay="350ms">
+										<i class="fa-solid fa-chevron-right"></i>
+										<div>
+											<h3>Renewable Energy Integration</h3>
+											<p>
+												We harness clean energy sources like solar and wind to reduce carbon footprints and power progress responsibly. Our systems are designed for efficiency, reliability, and measurable environmental impact.
+											</p>
+										</div>
+									</li>
+									<li class="wow ud-fade-in-up" data-wow-delay="400ms">
+										<i class="fa-solid fa-chevron-right"></i>
+										<div>
+											<h3>Smart Environmental Strategies</h3>
+											<p>
+												Through research, technology, and data-driven planning, we help organizations transition toward greener operations, lower emissions, and smarter resource management.
+											</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- About US Bottom End-->
+
+<!-- Service Start -->
 		<section class="srex-service srex-section">
 			<div class="container-fluid">
 				<div class="srex-section__head text-center">
@@ -606,139 +737,7 @@
 				
 			</div>
 		</section>
-
-		<!-- About US Start-->
-		<section class="srex-about-us-one srex-section">
-			<div class="srex-about-us-one__container">
-				<div class="row align-items-center">
-					<div class="col-lg-6 col-12">
-						<div class="srex-about-us-one__left text-left">
-							<div class="srex-section__head">
-								<h5 class="srex-section__head__badge wow ud-fade-in-up" data-wow-delay="200ms">
-									<img
-										src="assets/images/badge-icon.svg"
-										alt="Badge Icon"
-									>
-									About US
-								</h5>
-								<h2 class="srex-section__head__title wow ud-fade-in-up" data-wow-delay="200ms">
-									Powering a Greener Future, One Ray at a Time
-								</h2>
-								<p class="srex-section__head__desc wow ud-fade-in-up" data-wow-delay="200ms">
-									We transform sunlight into sustainable power solutions that help cities grow cleaner, businesses operate smarter, and communities thrive responsibly.
-								</p>
-
-								<div class="srex-icon-list wow ud-fade-in-up" data-wow-delay="200ms">
-									<ul>
-										<li>
-											<i class="fa-solid fa-check"></i>
-											<p>
-												Driving Innovation in Renewable Energy
-											</p>
-										</li>
-										<li>
-											<i class="fa-solid fa-check"></i>
-											<p>Delivering Smart, Scalable Solar Solutions</p>
-										</li>
-										<li>
-											<i class="fa-solid fa-check"></i>
-											<p>
-												Building Sustainable Systems for Tomorrow
-											</p>
-										</li>
-									</ul>
-								</div>
-
-								<a href="{{ route('coming-soon.index') }}" class="srex-btn srex-btn--outline wow ud-fade-in-up" data-wow-delay="200ms">
-									Read More <i class="fa-solid fa-plus"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-12 px-0">
-						<div class="srex-about-us-one__right">
-							<img
-								src="assets/images/about-us/about-us.png"
-								alt="About Us"
-								class="srex-about-us-one__right__img wow ud-fade-in-up" data-wow-delay="200ms"
-							>
-							<div>
-								<div class="srex-about-us-one__right__box d-flex gap-3 wow fadeInUp" data-wow-duration="1.3s">
-									<img
-										src="assets/images/about-us/medal.png"
-										alt="Medal"
-									>
-									<div class="srex-about-us-one__right__box__text">
-										<h2>15+</h2>
-										<p>Years of experience</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- About US End-->
-
-
-		<!-- About US Bottom Start-->
-		<section class="srex-section-bottom srex-section">
-			<div class="container">
-				<div class="row align-items-center justify-content-between">
-					<div class="col-lg-6 col-12">
-						<div class="srex-section-bottom__left wow ud-fade-in-up" data-wow-delay="200ms">
-							<img
-								src="assets/images/about-us/Shape.png"
-								alt="Shape"
-							>
-							<img
-								class="srex-section-bottom__left__img"
-								src="assets/images/about-us/about-us-bottom.png"
-								alt="about-us-bottom-img"
-							>
-						</div>
-					</div>
-					<div class="col-lg-6 col-12">
-						<div class="srex-section-bottom__right">
-							<div class="mb-5">
-								<h3 class="srex-section-bottom__right__title wow ud-fade-in-up" data-wow-delay="200ms">
-									Nature-Powered Solutions for a Sustainable Future
-								</h3>
-								<p class="srex-section-bottom__right__desc wow ud-fade-in-up" data-wow-delay="300ms">
-									We design scalable energy systems that reduce environmental impact while delivering long-term operational efficiency.
-								</p>
-							</div>
-							<div class="srex-icon-list srex-icon-list--multi-text">
-								<ul>
-									<li class="wow ud-fade-in-up" data-wow-delay="350ms">
-										<i class="fa-solid fa-chevron-right"></i>
-										<div>
-											<h3>Renewable Energy Integration</h3>
-											<p>
-												We harness clean energy sources like solar and wind to reduce carbon footprints and power progress responsibly. Our systems are designed for efficiency, reliability, and measurable environmental impact.
-											</p>
-										</div>
-									</li>
-									<li class="wow ud-fade-in-up" data-wow-delay="400ms">
-										<i class="fa-solid fa-chevron-right"></i>
-										<div>
-											<h3>Smart Environmental Strategies</h3>
-											<p>
-												Through research, technology, and data-driven planning, we help organizations transition toward greener operations, lower emissions, and smarter resource management.
-											</p>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- About US Bottom End-->
-
-
+		
 		<!-- Features Start -->
 		<section class="srex-features srex-section">
 			<div class="container">
