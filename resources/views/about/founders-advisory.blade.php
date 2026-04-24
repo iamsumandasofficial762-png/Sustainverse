@@ -214,7 +214,7 @@
                     </div>
 
                     <div class="info-area">
-                        <h4>Tanushree chandra</h4>
+                        <h4>Anushree chandra</h4>
                         <span class="designation">Marketing Specialist</span>
                         <p>Blends data and creativity to build campaigns that stick. Ananya focuses on growing brand presence while making eco-conscious living feel exciting, not complicated.</p>
 
