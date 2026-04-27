@@ -280,23 +280,6 @@
   }, 5000);
 </script>
 
-<!-- FOR OPEN BERGER MENU -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".ud-hamburger-menu");
-    const sidePopup = document.querySelector(".ud-side-popup");
-    const closeBtn = document.querySelector(".side-popup-close");
-
-    hamburger?.addEventListener("click", () => {
-        sidePopup.classList.add("active");
-    });
-
-    closeBtn?.addEventListener("click", () => {
-        sidePopup.classList.remove("active");
-    });
-});
-</script>
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const counter = document.getElementById("totalVisitorCount");

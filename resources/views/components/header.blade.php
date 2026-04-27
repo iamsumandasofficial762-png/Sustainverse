@@ -96,7 +96,7 @@
                                     @foreach ($categories as $cat)
                                         @if (in_array($cat->id, ($menu->cat_ids ?? [])))
                                             <div class="mega-col side-border">
-                                                <a href="{{ route('blog.category', $cat->category_slug) }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>{{ $cat->category_name }}</strong></a>
+                                                <a href="{{ route('blog.category', $cat->category_slug) }}" class="fs-6"><strong><i class="fa-regular fa-newspaper me-1"></i>{{ $cat->category_name }}</strong></a>
                                                 
                                                 <!-- SUB CATEGORIES -->
                                                 @foreach ($categories as $subCat)
@@ -134,7 +134,7 @@
                                     @foreach ($categories as $cat)
                                         @if (in_array($cat->id, ($menu->cat_ids ?? [])))
                                             <div class="mega-col side-border">
-                                                <a href="{{ route('blog.category', $cat->category_slug) }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>{{ $cat->category_name }}</strong></a>
+                                                <a href="{{ route('blog.category', $cat->category_slug) }}" class="fs-6"><strong><i class="fas fa-binoculars me-1"></i>{{ $cat->category_name }}</strong></a>
                                                 
                                                 <!-- SUB CATEGORIES -->
                                                 @foreach ($categories as $subCat)
@@ -167,7 +167,7 @@
                         <div class="mega-grid">
                             <!-- 1st row -->
                             <div class="mega-col side-border">
-                                <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>SV Leadership</strong></h4>
+                                <h4><strong><i class="fas fa-pen-fancy me-1"></i>SV Leadership</strong></h4>
                                 
                                 <!-- SUB CATEGORIES -->
                                 <a href="{{ route('coming-soon.index') }}">
@@ -176,7 +176,7 @@
                             </div>
 
                             <div class="mega-col side-border">
-                                <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Conversations</strong></h4>
+                                <h4><strong><i class="far fa-comments me-1"></i>Conversations</strong></h4>
                                 
                                 <!-- SUB CATEGORIES -->
                                 <a href="{{ route('coming-soon.index') }}">
@@ -185,7 +185,7 @@
                             </div>
 
                             <div class="mega-col side-border">
-                                <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Ongoing Voices</strong></h4>
+                                <h4><strong><i class="fas fa-clipboard me-1"></i>Ongoing Voices</strong></h4>
                                 
                                 <!-- SUB CATEGORIES -->
                                 <a href="{{ route('blog.index') }}">
@@ -217,7 +217,7 @@
                                     @foreach ($categories as $cat)
                                         @if (in_array($cat->id, ($menu->cat_ids ?? [])))
                                             <div class="mega-col side-border">
-                                                <a href="{{ route('blog.category', $cat->category_slug) }}" class="fs-6"><strong><i class="fa-solid fa-earth-americas me-1"></i>{{ $cat->category_name }}</strong></a>
+                                                <a href="{{ route('blog.category', $cat->category_slug) }}" class="fs-6"><strong><i class="far fa-lightbulb me-1"></i>{{ $cat->category_name }}</strong></a>
                                                 
                                                 <!-- SUB CATEGORIES -->
                                                 @foreach ($categories as $subCat)
@@ -253,7 +253,7 @@
                                     <!-- 1st row -->
 
                                     <div class="mega-col side-border">
-                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Flagship</strong></h4>
+                                        <h4><strong><i class="fa-regular fa-flag me-1"></i>Flagship</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
@@ -266,7 +266,7 @@
                                     </div>
 
                                     <div class="mega-col side-border">
-                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Recognition</strong></h4>
+                                        <h4><strong><i class="fa-solid fa-award me-1"></i>Recognition</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
@@ -279,7 +279,7 @@
                                     </div>
 
                                     <div class="mega-col side-border">
-                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Others’ Events</strong></h4>
+                                        <h4><strong><i class="far fa-calendar-alt me-1"></i>Others’ Events</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
@@ -315,7 +315,7 @@
                                 <div class="mega-grid">
                                     <!-- 1st row -->
                                     <div class="mega-col side-border">
-                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Learn</strong></h4>
+                                        <h4><strong><i class="fa-solid fa-book me-1"></i>Learn</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
@@ -330,7 +330,7 @@
                                     </div>
 
                                     <div class="mega-col side-border">
-                                        <h4><strong><i class="fa-solid fa-landmark srex-info-box__item__number me-1"></i>Work</strong></h4>
+                                        <h4><strong><i class="fa-solid fa-suitcase me-1"></i>Work</strong></h4>
                                         
                                         <!-- SUB CATEGORIES -->
                                         <a href="{{ route('coming-soon.index') }}">
@@ -748,12 +748,7 @@
 
                 <!-- MARKETPLACE -->
                 <li>
-                    <a href="" class="fs-5">Marketplace<i class="fa-solid fa-angle-down"></i></a>
-                    <ul class="sub-menu collapse primary-box">
-                        <li>
-                            <a href="{{ route('coming-soon.index') }}" class="fs-5">Coming soon<i class="fa-solid fa-angle-down"></i></a>
-                        </li>
-                    </ul>
+                    <a href="https://marketplace.sustainverse.org/" class="fs-5">Marketplace</a>
                 </li>
 
                 <li><a href="{{ url('/#faq-section') }}" class="side-popup-close fs-5">FAQ</a></li>

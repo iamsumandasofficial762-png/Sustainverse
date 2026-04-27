@@ -353,7 +353,7 @@
 									Powering a Greener Future, One Ray at a Time
 								</h2>
 								<p class="srex-section__head__desc wow ud-fade-in-up" data-wow-delay="200ms">
-									We transform sunlight into sustainable power solutions that help cities grow cleaner, businesses operate smarter, and communities thrive responsibly.
+									We harness the sun’s potential to architect energy ecosystems that allow cities to breathe, industries to lead, and future generations to flourish in harmony.
 								</p>
 
 								<div class="srex-icon-list wow ud-fade-in-up" data-wow-delay="200ms">
@@ -361,23 +361,31 @@
 										<li>
 											<i class="fa-solid fa-check"></i>
 											<p>
-												Driving Innovation in Renewable Energy
+												Energizing a Resilient World, One Photon at a Time
 											</p>
 										</li>
 										<li>
 											<i class="fa-solid fa-check"></i>
-											<p>Delivering Smart, Scalable Solar Solutions</p>
+											<p>
+												Pioneering the Next Frontier of Clean Intelligence
+											</p>
 										</li>
 										<li>
 											<i class="fa-solid fa-check"></i>
 											<p>
-												Building Sustainable Systems for Tomorrow
+												Orchestrating a Carbon-Neutral Legacy, One Beam at a Time
+											</p>
+										</li>
+										<li>
+											<i class="fa-solid fa-check"></i>
+											<p>
+												Igniting the Global Transition through Solar Excellence
 											</p>
 										</li>
 									</ul>
 								</div>
 
-								<a href="{{ route('coming-soon.index') }}" class="srex-btn srex-btn--outline wow ud-fade-in-up" data-wow-delay="200ms">
+								<a href="{{ route('vision.index') }}" class="srex-btn srex-btn--outline wow ud-fade-in-up" data-wow-delay="200ms">
 									Read More <i class="fa-solid fa-plus"></i>
 								</a>
 							</div>
@@ -905,7 +913,7 @@
 			<div class="container-fluid">
 				<div class="srex-video__box wow ud-fade-in-up" data-wow-delay="200ms">
 					<a
-						href="https://www.youtube.com/watch?v=bYsgGkKksvs"
+						href="https://www.youtube.com/watch?v=3WODX8fyRHA"
 						class="srex-video__play__btn popup-video"
 					>
 						<i class="fa-solid fa-play"></i>
@@ -915,6 +923,7 @@
 			</div>
 		</div>
 		<!-- Video Section End -->
+		 
 
 
 		<!-- Contact Section Start -->
@@ -1020,19 +1029,25 @@
 				</div>
 				<div class="controls wow ud-fade-in-up" data-wow-delay="200ms">
 					<ul id="filters">
-						<li class="filter active" data-filter="all">All</li>
-						<li class="filter" data-filter=".power">Eco Cities</li>
+						<li class="filter active" data-filter="all">
+							All
+						</li>
+						<li class="filter" data-filter=".power">
+							Eco Cities
+						</li>
 						<li class="filter" data-filter=".eco-solar">
 							Research
 						</li>
 						<li class="filter" data-filter=".solar-pro">
 							Biodiversity
 						</li>
-						<li class="filter" data-filter=".energy">Security</li>
+						<li class="filter" data-filter=".energy">
+							Security
+						</li>
 					</ul>
 				</div>
 				<div class="row" id="srex-ho-filter">
-					<div class="col-md-6 col-lg-4 col-xl-3 col-12 filter-item solar-pro">
+					<div class="col-md-6 col-lg-4 col-xl-3 col-12 filter-item power">
 						<a href="{{ route('coming-soon.index') }}">
 							<div class="srex-portfolio__item wow ud-fade-in-up" data-wow-delay="200ms">
 								<img
@@ -1041,21 +1056,7 @@
 								>
 								<div class="srex-portfolio__item__title">
 									<h2>01</h2>
-									<h3>Smart Eco Cities</h3>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3 col-12 filter-item power">
-						<a href="{{ route('coming-soon.index') }}">
-							<div class="srex-portfolio__item wow ud-fade-in-up" data-wow-delay="200ms">
-								<img
-									src="assets/images/portfolio/portfolio-2.png"
-									alt="portfolio-1"
-								>
-								<div class="srex-portfolio__item__title">
-									<h2>02</h2>
-									<h3>Knowledge & Research Hub</h3>
+									<h3>The Future, Built Today</h3>
 								</div>
 							</div>
 						</a>
@@ -1064,12 +1065,26 @@
 						<a href="{{ route('coming-soon.index') }}">
 							<div class="srex-portfolio__item wow ud-fade-in-up" data-wow-delay="200ms">
 								<img
+									src="assets/images/portfolio/portfolio-2.png"
+									alt="portfolio-1"
+								>
+								<div class="srex-portfolio__item__title">
+									<h2>02</h2>
+									<h3>Future-Proof Growth</h3>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-6 col-lg-4 col-xl-3 col-12 filter-item solar-pro">
+						<a href="{{ route('coming-soon.index') }}">
+							<div class="srex-portfolio__item wow ud-fade-in-up" data-wow-delay="200ms">
+								<img
 									src="assets/images/portfolio/portfolio-3.png"
 									alt="portfolio-1"
 								>
 								<div class="srex-portfolio__item__title">
 									<h2>03</h2>
-									<h3>Biodiversity Initiatives</h3>
+									<h3>Resyncing with Nature.</h3>
 								</div>
 							</div>
 						</a>
@@ -1083,7 +1098,7 @@
 								>
 								<div class="srex-portfolio__item__title">
 									<h2>04</h2>
-									<h3>Resource Security & Sustainability</h3>
+									<h3>Protect. Preserve. Provide.</h3>
 								</div>
 							</div>
 						</a>
@@ -1212,7 +1227,7 @@
 		<!-- Question Section End -->
 
 		<!-- NewsLetter Section Start -->
-		<section class="srex-news-letter srex-section">
+		<!-- <section class="srex-news-letter srex-section">
 			<div class="container">
 				<div class="srex-news-letter__box wow ud-fade-in-up" data-wow-delay="200ms">
 					<div class="row">
@@ -1239,7 +1254,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- NewsLetter Section End -->
 
 		<!-- Stats Section Start -->

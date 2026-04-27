@@ -82,9 +82,9 @@
 	 */
 	$(".srex-testimonial-one__slider").slick({
 		dots: true,
-		arrows: false,
+		arrows: true,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 6000,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		fade: true,
