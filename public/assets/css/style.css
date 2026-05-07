@@ -7208,9 +7208,16 @@ body {
 
 @media (max-width: 991px) {
     .hero-section .container-fluid .primary-hero {
-        min-height: 292px;
+        height: 292px;
+        min-height: 0;
+        max-height: none;
         margin-bottom: 12px;
     }
+}
+
+.hero-section .container-fluid .primary-hero a {
+    display: block;
+    height: 100%;
 }
 
 .hero-section .container-fluid .primary-hero:hover {
@@ -7219,6 +7226,7 @@ body {
 }
 
 .hero-section .container-fluid .primary-hero a img {
+    display: block;
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -7349,7 +7357,7 @@ body {
 
 .hero-section .container-fluid .sponser-hero {
     position: relative;
-    /* margin-top: 15px; */
+    margin-top: 12px;
     height: 292px;
     width: 100%;
     border-radius: 10px;
@@ -8154,47 +8162,100 @@ body {
     padding: 0 10%;
     background-color: #fcfbf7; /* Light cream background like the image */
 }
+
+.ecosystem-stories {
+    padding-top: 24px;
+    padding-bottom: 48px;
+}
+
+.ecosystem-card-list {
+    margin-top: 10px;
+}
+
 /* =========================
    CARD BASE STYLES (DESKTOP)
 ========================= */
 
 .eco-card {
-    background: #f8f7f0;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgb(0 0 0 / 60%);
+    position: relative;
+    overflow: hidden;
+    min-height: 335px;
+    background: linear-gradient(90deg, #fffdf8 0%, #fbf8e8 54%, #f4f1d2 100%);
+    border: 1px solid rgba(45, 84, 58, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 18px 36px rgb(35 46 31 / 20%);
 }
 
 .eco-image-card {
-    height: 325px;
-    border-radius: 15px;
-    background: #fff;
+    position: relative;
+    height: 335px;
+    min-height: 100%;
+    overflow: hidden;
+    background: #eef3cf;
 }
 
 .eco-image-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
 }
 
 .eco-content-card {
-    height: 290px;
-    border-radius: 10px;
-    padding: 15px;
-    background: #f8f7f0;
+    min-height: 335px;
+    padding: 36px 42px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .eco-content-card .content-title {
-    color: #333;
+    max-width: 650px;
+    margin-bottom: 12px;
+    color: #2d543a;
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: 0;
+    font-weight: 700;
 }
 
 .eco-content-card .content-box {
-    height: 185px;
+    max-width: 760px;
 }
 
 .eco-content-card .content-box p {
-    font-size: 20px;
-    color: #686868;
+    margin-bottom: 0;
+    font-size: 17px;
+    line-height: 1.58;
+    color: #525252;
+}
+
+.eco-content-card .content-box p + p {
+    margin-top: 12px;
+}
+
+.eco-card__full-text {
+    display: none;
+}
+
+.eco-card--expanded .eco-card__full-text {
+    display: block;
+}
+
+.eco-card__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    color: #34883b;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.eco-card__eyebrow i {
+    font-size: 16px;
 }
 
 /* =========================
@@ -8202,20 +8263,35 @@ body {
 ========================= */
 
 .read-more-btn {
-    margin-top: 40px;
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #a4ad96;
+    align-self: flex-start;
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-width: 155px;
+    min-height: 44px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background-color: #34883b;
     color: #fff;
     text-decoration: none;
     font-size: 13px;
-    letter-spacing: 1px;
+    font-weight: 800;
+    letter-spacing: 0;
+    border: 0;
+    cursor: pointer;
     transition: background 0.3s;
 }
 
 .read-more-btn:hover {
-    background-color: #1d8f2c;
-    box-shadow: 0 4px 20px rgb(0 0 0 / 60%);
+    background-color: #236b2d;
+    color: #fff;
+    box-shadow: 0 10px 20px rgb(35 107 45 / 25%);
+}
+
+.read-more-btn i {
+    font-size: 13px;
 }
 
 /* =========================
@@ -8232,13 +8308,22 @@ body {
     .eco-image-card,
     .eco-content-card,
     .eco-content-card .content-box {
+        min-height: auto;
         height: auto;
     }
 
     /* Spacing */
     .eco-card {
-        padding: 15px;
+        padding: 0;
         margin-bottom: 20px;
+    }
+
+    .eco-image-card {
+        height: 220px;
+    }
+
+    .eco-content-card {
+        padding: 24px 20px 28px;
     }
 
     /* Typography */
@@ -8258,6 +8343,7 @@ body {
 
     .read-more-btn {
         font-size: 0.85rem;
+        margin-top: 22px;
     }
 }
 /* ROAD MAP PAGE */

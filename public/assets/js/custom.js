@@ -218,6 +218,14 @@
 	 * Filter
 	 */
 	if ($("#srex-ho-filter").length) {
+		const revealPortfolioItems = function () {
+			$("#srex-ho-filter .filter-item:visible .srex-portfolio__item").css({
+				visibility: "visible",
+				"animation-name": "fadeInUp",
+			});
+			$(window).trigger("scroll");
+		};
+
 		$("#srex-ho-filter").mixItUp({
 			selectors: {
 				target: ".filter-item",
@@ -228,6 +236,14 @@
 				animateResizeContainer: false,
 				effects: "fade scale",
 			},
+			callbacks: {
+				onMixEnd: revealPortfolioItems,
+			},
+		});
+
+		$(".srex-portfolio .filter").on("click", function () {
+			setTimeout(revealPortfolioItems, 120);
+			setTimeout(revealPortfolioItems, 420);
 		});
 	}
 

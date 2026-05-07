@@ -70,14 +70,12 @@
                             <div class="mega-col side-border">
                                 <h4><strong><i class="fas fa-phone srex-info-box__item__number me-1"></i>Connect</strong></h4>
                                 <a href="{{ route('contact.index') }}">Contact Us</a>
-                                <!--<a href="{{ route('coming-soon.index') }}">Coming Soon</a>-->
                             </div>
 
                             <div class="mega-col highlight-box">
                                 <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                 <div class="news-btn-box">
-                                    <a class="btn outline" href=""><i class="fa-regular fa-file-pdf srex-info-box__item__number me-2"></i>PDF</a>
-                                    <a class="btn outline mt-2" href=""><i class="fas fa-phone srex-info-box__item__number me-2"></i>Partner With SustainVerse</a>
+                                    <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}"><i class="fas fa-phone srex-info-box__item__number me-2"></i>Partner With SustainVerse</a>
                                 </div>
                             </div>
 
@@ -112,8 +110,8 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline" href="">Submit Press release</a>
-                                            <a class="btn outline mt-2" href="">Subscribe to Newsletter</a>
+                                            <a class="btn outline" href="{{ route('coming-soon.index') }}">Submit Press release</a>
+                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Subscribe to Newsletter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -150,8 +148,8 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline" href="">Submit News Tip</a>
-                                            <a class="btn outline mt-2" href="">Subscribe to Newsletter</a>
+                                            <a class="btn outline" href="{{ route('coming-soon.index') }}">Submit News Tip</a>
+                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Subscribe to Newsletter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -199,8 +197,8 @@
                             <div class="mega-col highlight-box">
                                 <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                 <div class="news-btn-box">
-                                    <a class="btn outline" href="">Pitch an Interview</a>
-                                    <a class="btn outline mt-2" href="">Profile</a>
+                                    <a class="btn outline" href="{{ route('coming-soon.index') }}">Pitch an Interview</a>
+                                    <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Profile</a>
                                 </div>
                             </div>
                         </div>
@@ -234,8 +232,8 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline" href="">Request Advisory</a>
-                                            <a class="btn outline mt-2" href="">List a CSR Project</a>
+                                            <a class="btn outline" href="{{ route('coming-soon.index') }}">Request Advisory</a>
+                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">List a CSR Project</a>
                                         </div>
                                     </div>
                                 </div>
@@ -297,8 +295,8 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline mt-2" href="">Nominate</a>
-                                            <a class="btn outline mt-2" href="">Register</a>
+                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Nominate</a>
+                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Register</a>
                                         </div>
                                     </div>
                                 </div>
@@ -347,7 +345,7 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline mt-2" href="">Apply to Masterclass</a>
+                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Apply to Masterclass</a>
                                         </div>
                                     </div>
                                 </div>

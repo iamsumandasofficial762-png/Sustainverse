@@ -475,7 +475,7 @@
 		<!-- About US Bottom End-->
 
 <!-- Service Start -->
-		<section class="srex-service srex-section">
+		<!-- <section class="srex-service srex-section">
 			<div class="container-fluid">
 				<div class="srex-section__head text-center">
 					<h5 class="srex-section__head__badge wow ud-fade-in-up" data-wow-delay="200ms">
@@ -710,7 +710,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- Service End -->
 
 		<!-- CAROUSAL -->
@@ -1053,6 +1053,7 @@
 								<img
 									src="assets/images/portfolio/portfolio-1.png"
 									alt="portfolio-1"
+									loading="eager"
 								>
 								<div class="srex-portfolio__item__title">
 									<h2>01</h2>
@@ -1067,6 +1068,7 @@
 								<img
 									src="assets/images/portfolio/portfolio-2.png"
 									alt="portfolio-1"
+									loading="eager"
 								>
 								<div class="srex-portfolio__item__title">
 									<h2>02</h2>
@@ -1081,6 +1083,7 @@
 								<img
 									src="assets/images/portfolio/portfolio-3.png"
 									alt="portfolio-1"
+									loading="eager"
 								>
 								<div class="srex-portfolio__item__title">
 									<h2>03</h2>
@@ -1095,6 +1098,7 @@
 								<img
 									src="assets/images/portfolio/portfolio-4.png"
 									alt="portfolio-1"
+									loading="eager"
 								>
 								<div class="srex-portfolio__item__title">
 									<h2>04</h2>
