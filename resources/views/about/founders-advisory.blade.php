@@ -166,7 +166,7 @@
                     <div class="shape-overlay"></div>
 
                     <div class="img-area">
-                        <img src="{{ asset('assets/images/home-one/avatar.png') }}" alt="Lyn Bryan">
+                        <img src="{{ asset('assets/images/home-one/avatar.png') }}" alt="team-member">
                     </div>
 
                     <div class="info-area">
@@ -188,7 +188,7 @@
                     <div class="shape-overlay"></div>
 
                     <div class="img-area">
-                        <img src="{{ asset('assets/images/home-one/avatar.png') }}" alt="Lyn Bryan">
+                        <img src="{{ asset('assets/images/home-one/avatar.png') }}" alt="team-member">
                     </div>
 
                     <div class="info-area">
@@ -210,13 +210,13 @@
                     <div class="shape-overlay"></div>
 
                     <div class="img-area">
-                        <img src="{{ asset('assets/images/home-one/avatar.png') }}" alt="Lyn Bryan">
+                        <img src="{{ asset('assets/images/home-one/avatar.png') }}" alt="team-member">
                     </div>
 
                     <div class="info-area">
                         <h4>Anushree chandra</h4>
                         <span class="designation">Marketing Specialist</span>
-                        <p>Blends data and creativity to build campaigns that stick. Ananya focuses on growing brand presence while making eco-conscious living feel exciting, not complicated.</p>
+                        <p>Blends data and creativity to build campaigns that stick. Anushree focuses on growing brand presence while making eco-conscious living feel exciting, not complicated.</p>
 
                         <!-- <div class="social-links">
                             <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -232,13 +232,13 @@
                     <div class="shape-overlay"></div>
 
                     <div class="img-area">
-                        <img src="{{ asset('assets/images/home-one/avatar.png') }}" alt="Lyn Bryan">
+                        <img src="{{ asset('assets/images/home-one/avatar.png') }}" alt="team-member">
                     </div>
 
                     <div class="info-area">
                         <h4>Sweta Roy</h4>
                         <span class="designation">Content Creator</span>
-                        <p>Turns ideas into stories people actually want to read. From blogs to video scripts, Kabir crafts content that makes sustainability feel less like a lecture and more like a movement.</p>
+                        <p>Turns ideas into stories people actually want to read. From blogs to video scripts, Sweta crafts content that makes sustainability feel less like a lecture and more like a movement.</p>
 
                         <!-- <div class="social-links">
                             <a href=""><i class="fab fa-facebook-f"></i></a>

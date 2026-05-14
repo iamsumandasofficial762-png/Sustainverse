@@ -25,46 +25,18 @@
                             <h2>Environmental <span style="color: #007a3d;">Sustainability</span> Strategic Green Roadmap</h2>
                         </div>
                         <div class="content-content">
-                            <p>
-                                This visual presents a structured green roadmap outlining an organization’s journey toward environmental sustainability over multiple years. It highlights three core goals arranged along a timeline: becoming an environmentally responsible organization, preparing for the green economy, and building active partnerships in environmental sustainability. Each phase focuses on practical actions such as reducing carbon footprint, investing in renewable energy, upskilling employees with green competencies, leveraging technology for resource efficiency, and fostering collaboration with key stakeholders. Together, the roadmap illustrates a progressive, goal-driven approach to integrating sustainability into operations, culture, and long-term strategy.
+                            Here at Sustainverse, we think a sustainability journey works best when you have a clear, down to earth plan. And that is exactly what this green roadmap shows. It is a simple but powerful path from 2021 through to 2024.
 
-                                If you want, I can also make this shorter, more marketing-focused, or simpler for a presentation slide.
-                            </p>
-                            <p>
-                                This visual presents a structured green roadmap outlining an organization’s journey toward environmental sustainability over multiple years. It highlights three core goals arranged along a timeline: becoming an environmentally responsible organization, preparing for the green economy, and building active partnerships in environmental sustainability. Each phase focuses on practical actions such as reducing carbon footprint, investing in renewable energy, upskilling employees with green competencies, leveraging technology for resource efficiency, and fostering collaboration with key stakeholders. Together, the roadmap illustrates a progressive, goal-driven approach to integrating sustainability into operations, culture, and long-term strategy.
+                            The roadmap has three big hearted goals. First, becoming an environmentally responsible organization. Second, getting ready for the green economy. And third, building active partnerships for a healthier planet.
 
-                                If you want, I can also make this shorter, more marketing-focused, or simpler for a presentation slide.
-                            </p>
-                            <p>
-                                This visual presents a structured green roadmap outlining an organization’s journey toward environmental sustainability over multiple years. It highlights three core goals arranged along a timeline: becoming an environmentally responsible organization, preparing for the green economy, and building active partnerships in environmental sustainability. Each phase focuses on practical actions such as reducing carbon footprint, investing in renewable energy, upskilling employees with green competencies, leveraging technology for resource efficiency, and fostering collaboration with key stakeholders. Together, the roadmap illustrates a progressive, goal-driven approach to integrating sustainability into operations, culture, and long-term strategy.
+                            In the early phase from 2021 to 2022, the focus is on cutting our carbon footprint. That means more e meetings, investing in renewable energy, and using data analytics to manage energy, water, and waste smarter. Then from 2022 to 2023, we train our employees with real green skills and grow partnerships with agencies and industry partners in clean energy. Finally from 2023 to 2024, we promote simple "ECO" habits among our teams and learn together through conferences and learning journeys.
 
-                                If you want, I can also make this shorter, more marketing-focused, or simpler for a presentation slide.
-                            </p>
-                            <p>
-                                This visual presents a structured green roadmap outlining an organization’s journey toward environmental sustainability over multiple years. It highlights three core goals arranged along a timeline: becoming an environmentally responsible organization, preparing for the green economy, and building active partnerships in environmental sustainability. Each phase focuses on practical actions such as reducing carbon footprint, investing in renewable energy, upskilling employees with green competencies, leveraging technology for resource efficiency, and fostering collaboration with key stakeholders. Together, the roadmap illustrates a progressive, goal-driven approach to integrating sustainability into operations, culture, and long-term strategy.
-
-                                If you want, I can also make this shorter, more marketing-focused, or simpler for a presentation slide.
-                            </p>
+                            This is not about perfection overnight. It is about progress, people, and genuine partnership. Let us walk this road together.
                         </div>
                     </div>
                     <div class="road-map mb-3">
                         <img src="{{ asset('assets/images/home-three/Slide2-11.png') }}" alt="">
-                    </div>
-                    <div class="road-map-content">
-                        <div class="content-content">
-                            <p>
-                                This visual presents a structured green roadmap outlining an organization’s journey toward environmental sustainability over multiple years. It highlights three core goals arranged along a timeline: becoming an environmentally responsible organization, preparing for the green economy, and building active partnerships in environmental sustainability. Each phase focuses on practical actions such as reducing carbon footprint, investing in renewable energy, upskilling employees with green competencies, leveraging technology for resource efficiency, and fostering collaboration with key stakeholders. Together, the roadmap illustrates a progressive, goal-driven approach to integrating sustainability into operations, culture, and long-term strategy.
-
-                                If you want, I can also make this shorter, more marketing-focused, or simpler for a presentation slide.
-                            </p>
-                            <p>
-                                This visual presents a structured green roadmap outlining an organization’s journey toward environmental sustainability over multiple years. It highlights three core goals arranged along a timeline: becoming an environmentally responsible organization, preparing for the green economy, and building active partnerships in environmental sustainability. Each phase focuses on practical actions such as reducing carbon footprint, investing in renewable energy, upskilling employees with green competencies, leveraging technology for resource efficiency, and fostering collaboration with key stakeholders. Together, the roadmap illustrates a progressive, goal-driven approach to integrating sustainability into operations, culture, and long-term strategy.
-
-                                If you want, I can also make this shorter, more marketing-focused, or simpler for a presentation slide.
-                            </p>
-                        </div>
-                    </div>
-                    
+                    </div>  
                 </div>
                 
             </div>

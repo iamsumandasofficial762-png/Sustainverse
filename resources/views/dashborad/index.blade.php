@@ -404,10 +404,10 @@
 										src="assets/images/about-us/medal.png"
 										alt="Medal"
 									>
-									<div class="srex-about-us-one__right__box__text">
+									<!-- <div class="srex-about-us-one__right__box__text">
 										<h2>15+</h2>
 										<p>Years of experience</p>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -747,6 +747,76 @@
 		</section>
 		
 		<!-- Features Start -->
+		@php
+			$ecosystemFeatureCards = [
+				[
+					'id' => 'circular-economy-revolution',
+					'title' => 'The Circular Economy Revolution',
+					'description' => 'Waste is being reimagined as a resource, from ocean plastic to recovered industrial materials.',
+					'image' => 'assets/images/home-one/features/features-1.svg',
+				],
+				[
+					'id' => 'green-architecture-smart-urban-spaces',
+					'title' => 'Green Architecture & Smart Urban Spaces',
+					'description' => 'Living buildings, smart glass, and vertical forests are reshaping cleaner cities.',
+					'image' => 'assets/images/home-one/features/features-2.svg',
+				],
+				[
+					'id' => 'future-of-agri-tech',
+					'title' => 'The Future of Agri-Tech',
+					'description' => 'AI precision farming and vertical indoor farms are strengthening food security.',
+					'image' => 'assets/images/home-one/features/features-3.svg',
+				],
+				[
+					'id' => 'renewable-energy-beyond-the-grid',
+					'title' => 'Renewable Energy: Beyond the Grid',
+					'description' => 'Green hydrogen, tidal energy, and long-duration storage help renewable power scale.',
+					'image' => 'assets/images/home-one/features/features-4.svg',
+				],
+				[
+					'id' => 'conscious-fashion',
+					'title' => 'Conscious Fashion: The End of Fast Trends',
+					'description' => 'Slow fashion is rising through better materials and supply-chain transparency.',
+					'image' => 'assets/images/home-one/features/features-1.svg',
+				],
+				[
+					'id' => 'path-to-net-zero-corporate-strategy',
+					'title' => 'The Path to Net-Zero: Corporate Strategy',
+					'description' => 'Industries are moving toward carbon neutrality through ESG and carbon solutions.',
+					'image' => 'assets/images/home-one/features/features-2.svg',
+				],
+				[
+					'id' => 'clean-mobility-ev-ecosystem',
+					'title' => 'Clean Mobility & The EV Ecosystem',
+					'description' => 'Solid-state batteries, clean transit, and sustainable fuels extend low-carbon mobility.',
+					'image' => 'assets/images/home-one/features/features-3.svg',
+				],
+				[
+					'id' => 'blue-economy-sustaining-our-oceans',
+					'title' => 'Blue Economy: Sustaining Our Oceans',
+					'description' => 'Ocean conservation can remove waste, store carbon, and support coastal livelihoods.',
+					'image' => 'assets/images/home-one/features/features-4.svg',
+				],
+				[
+					'id' => 'tech-for-good-ai-big-data',
+					'title' => 'Tech for Good: AI & Big Data',
+					'description' => 'AI and data help monitor deforestation and optimize large-scale energy use.',
+					'image' => 'assets/images/home-one/features/features-1.svg',
+				],
+				[
+					'id' => 'grassroots-innovation-rural-sustainability',
+					'title' => 'Grassroots Innovation & Rural Sustainability',
+					'description' => 'Local knowledge powers practical solutions for farming, water, and remote communities.',
+					'image' => 'assets/images/home-one/features/features-2.svg',
+				],
+				[
+					'id' => 'digital-sobriety-green-computing',
+					'title' => 'Digital Sobriety & Green Computing',
+					'description' => 'Green IT reduces the environmental cost of data, AI, code, and cloud operations.',
+					'image' => 'assets/images/home-one/features/features-3.svg',
+				],
+			];
+		@endphp
 		<section class="srex-features srex-section">
 			<div class="container">
 				<div class="row justify-content-between">
@@ -758,15 +828,17 @@
 										src="assets/images/badge-icon.svg"
 										alt="Badge Icon"
 									>
-									Our Features
+									Our Eco systems
 								</h5>
 								<h2 class="srex-section__head__title wow ud-fade-in-up" data-wow-delay="250ms">
-									Driving Sustainable Innovation Across Industries
+									Building Bridges for a Greener Tomorrow
 								</h2>
 								<p class="mb-5  wow ud-fade-in-up" data-wow-delay="200ms">
-									At SustainVerse, we go beyond renewable energy. We build intelligent, eco-conscious solutions that help businesses operate responsibly, reduce environmental impact, and create long-term value for communities and the planet.
+									SustainVerse stands at the forefront of the global ecological transition, serving as a premier intelligence hub designed to bridge the critical gap between corporate strategy and environmental stewardship. In an era where sustainability is no longer optional but a business imperative, our platform provides the essential roadmap for organizations aiming to integrate Green-Tech and ESG principles into their core DNA.
+
+Our primary strength lies in our specialized focus on cross-border sustainability corridors, with a particular emphasis on the burgeoning India-UAE partnership. By analyzing the unique synergy between these two economic powerhouses, SustainVerse fosters a collaborative ecosystem where innovation in renewable energy, carbon neutrality, and circular economies can thrive. We don’t just report on the news; we synthesize complex market data into actionable insights that empower decision-makers to lead with purpose
 								</p>
-								<a href="{{ route('coming-soon.index') }}" class="srex-btn srex-btn--outline wow ud-fade-in-up" data-wow-delay="200ms">
+								<a href="{{ route('ecosystem.index') }}" class="srex-btn srex-btn--outline wow ud-fade-in-up" data-wow-delay="200ms">
 									Read More <i class="fa-solid fa-plus"></i>
 								</a>
 							</div>
@@ -774,130 +846,47 @@
 					</div>
 					<div class="col-lg-6 col-12">
 						<div class="srex-info-box srex-info-box--feature-box">
-							<div class="row">
-								<div class="col-md-6 col-12">
-									<div class="srex-info-box__item wow ud-fade-in-up" data-wow-duration="1s">
-										<div
-											class="d-flex justify-content-between align-items-center"
-										>
-											<div
-												class="srex-info-box__item__img"
-											>
-												<img
-													src="assets/images/home-one/features/features-1.svg"
-													class="srex-info-box__item__logo"
-													alt="GreenSun Support"
-												>
-											</div>
-										</div>
-										<h3 class="srex-info-box__item__text">
-											GreenSun Support
-										</h3>
-										<p class="mb-3">
-											provides reliable, efficient solutions for sustainable customer assistance.
-										</p>
-										<div class="srex-info-box__more">
-											<a href="{{ route('coming-soon.index') }}"
-												>Read More
-												<i
-													class="fa-solid fa-arrow-right"
-												></i>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-12">
-									<div class="srex-info-box__item wow ud-fade-in-up" data-wow-duration="1.3s">
-										<div
-											class="d-flex justify-content-between align-items-center"
-										>
-											<div
-												class="srex-info-box__item__img"
-											>
-												<img
-												src="assets/images/home-one/features/features-2.svg"
-													class="srex-info-box__item__logo"
-													alt="BrightSun Support"
-												>
-											</div>
-										</div>
-										<h3 class="srex-info-box__item__text">
-											BrightSun Support
-										</h3>
-										<p class="mb-3">
-											delivers fast, friendly, and dependable customer service solutions.
-										</p>
-										<div class="srex-info-box__more">
-											<a href="{{ route('coming-soon.index') }}"
-												>Read More
-												<i
-													class="fa-solid fa-arrow-right"
-												></i
-											></a>
+							<div class="ecosystem-feature-carousel" data-ecosystem-slider>
+								@foreach (array_chunk($ecosystemFeatureCards, 4) as $slideIndex => $featureSlide)
+									<div class="ecosystem-feature-slide {{ $slideIndex === 0 ? 'ecosystem-feature-slide--active' : '' }}">
+										<div class="row">
+											@foreach ($featureSlide as $featureCard)
+												<div class="col-md-6 col-12">
+													<div class="srex-info-box__item">
+														<div class="d-flex justify-content-between align-items-center">
+															<div class="srex-info-box__item__img">
+																<img
+																	src="{{ asset($featureCard['image']) }}"
+																	class="srex-info-box__item__logo"
+																	alt="{{ $featureCard['title'] }}"
+																>
+															</div>
+														</div>
+														<h3 class="srex-info-box__item__text">
+															{{ $featureCard['title'] }}
+														</h3>
+														<p class="mb-3">
+															{{ $featureCard['description'] }}
+														</p>
+														<div class="srex-info-box__more">
+															<a href="{{ route('ecosystem.index') }}#{{ $featureCard['id'] }}"
+																>Read More
+																<i class="fa-solid fa-arrow-right"></i>
+															</a>
+														</div>
+													</div>
+												</div>
+											@endforeach
 										</div>
 									</div>
-								</div>
-								<div class="col-md-6 col-12">
-									<div class="srex-info-box__item wow ud-fade-in-up" data-wow-duration="1.6s">
-										<div
-											class="d-flex justify-content-between align-items-center"
-										>
-											<div
-												class="srex-info-box__item__img"
-											>
-												<img
-												src="assets/images/home-one/features/features-3.svg"
-													class="srex-info-box__item__logo"
-													alt="SolarPro Solutions"
-												>
-											</div>
-										</div>
-										<h3 class="srex-info-box__item__text">
-											SolarPro Solutions
-										</h3>
-										<p class="mb-3">
-											delivers efficient, innovative, and reliable solar energy services.
-										</p>
-										<div class="srex-info-box__more">
-											<a href="{{ route('coming-soon.index') }}"
-												>Read More
-												<i
-													class="fa-solid fa-arrow-right"
-												></i
-											></a>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-12">
-									<div class="srex-info-box__item wow ud-fade-in-up" data-wow-duration="1.9s">
-										<div
-											class="d-flex justify-content-between align-items-center"
-										>
-											<div
-												class="srex-info-box__item__img"
-											>
-												<img
-												src="assets/images/home-one/features/features-4.svg"
-													class="srex-info-box__item__logo"
-													alt="EcoSolar Services"
-												>
-											</div>
-										</div>
-										<h3 class="srex-info-box__item__text">
-											EcoSolar Services
-										</h3>
-										<p class="mb-3">
-											provides clean, efficient, and sustainable solar energy solutions.
-										</p>
-										<div class="srex-info-box__more">
-											<a href="{{ route('coming-soon.index') }}"
-												>Read More
-												<i
-													class="fa-solid fa-arrow-right"
-												></i
-											></a>
-										</div>
-									</div>
+								@endforeach
+								<div class="ecosystem-feature-carousel__controls">
+									<button class="ecosystem-feature-carousel__control" type="button" data-ecosystem-prev aria-label="Previous ecosystem cards">
+										<i class="fa-solid fa-arrow-left"></i>
+									</button>
+									<button class="ecosystem-feature-carousel__control" type="button" data-ecosystem-next aria-label="Next ecosystem cards">
+										<i class="fa-solid fa-arrow-right"></i>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -906,6 +895,48 @@
 			</div>
 		</section>
 		<!-- Features End -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				var slider = document.querySelector('[data-ecosystem-slider]');
+
+				if (!slider) {
+					return;
+				}
+
+				var slides = slider.querySelectorAll('.ecosystem-feature-slide');
+				var previousButton = slider.querySelector('[data-ecosystem-prev]');
+				var nextButton = slider.querySelector('[data-ecosystem-next]');
+				var activeIndex = 0;
+				var interval;
+
+				function showSlide(index) {
+					activeIndex = (index + slides.length) % slides.length;
+
+					slides.forEach(function (slide, slideIndex) {
+						slide.classList.toggle('ecosystem-feature-slide--active', slideIndex === activeIndex);
+					});
+				}
+
+				function restartAutoplay() {
+					clearInterval(interval);
+					interval = setInterval(function () {
+						showSlide(activeIndex + 1);
+					}, 8000);
+				}
+
+				previousButton.addEventListener('click', function () {
+					showSlide(activeIndex - 1);
+					restartAutoplay();
+				});
+
+				nextButton.addEventListener('click', function () {
+					showSlide(activeIndex + 1);
+					restartAutoplay();
+				});
+
+				restartAutoplay();
+			});
+		</script>
 
 
 		<!-- Video Section Start -->
@@ -1011,7 +1042,7 @@
 
 
 		<!--  Latest PortFolio Start -->
-		<section class="srex-portfolio srex-section">
+		<section class="srex-portfolio srex-section" data-portfolio-section>
 			<div class="container-fluid">
 				<div class="srex-portfolio__title">
 					<div class="srex-section__head wow ud-fade-in-up" data-wow-delay="200ms">
@@ -1048,7 +1079,8 @@
 				</div>
 				<div class="row" id="srex-ho-filter">
 					<div class="col-md-6 col-lg-4 col-xl-3 col-12 filter-item power">
-						<a href="{{ route('coming-soon.index') }}">
+						<div class="srex-portfolio__feature">
+						<a href="#srex-ho-filter" class="srex-portfolio__media-link" data-portfolio-card-filter=".power">
 							<div class="srex-portfolio__item wow ud-fade-in-up" data-wow-delay="200ms">
 								<img
 									src="assets/images/portfolio/portfolio-1.png"
@@ -1061,9 +1093,20 @@
 								</div>
 							</div>
 						</a>
+						<div class="srex-portfolio__content-card">
+							<div class="srex-portfolio__content-badge">
+								<i class="fa-regular fa-lightbulb"></i>
+								<span>Why It Matters</span>
+							</div>
+							<h3>The Future, Built Today</h3>
+							<p>Technology is reshaping the way learners explore, connect, and grow. From smart digital learning platforms to AI-powered tools, innovation is enhancing every aspect of education.</p>
+							<p>This section highlights how modern solutions, intelligent systems, and data-driven insights are creating future-ready learners and transforming education for a better tomorrow.</p>
+						</div>
+						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3 col-12 filter-item eco-solar">
-						<a href="{{ route('coming-soon.index') }}">
+						<div class="srex-portfolio__feature">
+						<a href="#srex-ho-filter" class="srex-portfolio__media-link" data-portfolio-card-filter=".eco-solar">
 							<div class="srex-portfolio__item wow ud-fade-in-up" data-wow-delay="200ms">
 								<img
 									src="assets/images/portfolio/portfolio-2.png"
@@ -1076,9 +1119,20 @@
 								</div>
 							</div>
 						</a>
+						<div class="srex-portfolio__content-card">
+							<div class="srex-portfolio__content-badge">
+								<i class="fa-regular fa-lightbulb"></i>
+								<span>Why It Matters</span>
+							</div>
+							<h3>Future-Proof Growth</h3>
+							<p>Sustainable growth depends on systems that can adapt, scale, and protect value over time. Research-led decisions help organizations move from short-term fixes to durable transformation.</p>
+							<p>By combining evidence, experimentation, and measurable impact, businesses can build resilient models that are ready for changing markets, communities, and climate realities.</p>
+						</div>
+						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3 col-12 filter-item solar-pro">
-						<a href="{{ route('coming-soon.index') }}">
+						<div class="srex-portfolio__feature">
+						<a href="#srex-ho-filter" class="srex-portfolio__media-link" data-portfolio-card-filter=".solar-pro">
 							<div class="srex-portfolio__item wow ud-fade-in-up" data-wow-delay="200ms">
 								<img
 									src="assets/images/portfolio/portfolio-3.png"
@@ -1091,9 +1145,20 @@
 								</div>
 							</div>
 						</a>
+						<div class="srex-portfolio__content-card">
+							<div class="srex-portfolio__content-badge">
+								<i class="fa-regular fa-lightbulb"></i>
+								<span>Why It Matters</span>
+							</div>
+							<h3>Resyncing with Nature.</h3>
+							<p>Biodiversity keeps ecosystems balanced, productive, and alive. Protecting natural networks strengthens food systems, water security, climate resilience, and community wellbeing.</p>
+							<p>This focus area explores solutions that restore habitats, support responsible land use, and help people work with nature instead of against it.</p>
+						</div>
+						</div>
 					</div>
 					<div class="col-md-6 col-lg-4 col-xl-3 col-12 filter-item energy">
-						<a href="{{ route('coming-soon.index') }}">
+						<div class="srex-portfolio__feature">
+						<a href="#srex-ho-filter" class="srex-portfolio__media-link" data-portfolio-card-filter=".energy">
 							<div class="srex-portfolio__item wow ud-fade-in-up" data-wow-delay="200ms">
 								<img
 									src="assets/images/portfolio/portfolio-4.png"
@@ -1106,6 +1171,16 @@
 								</div>
 							</div>
 						</a>
+						<div class="srex-portfolio__content-card">
+							<div class="srex-portfolio__content-badge">
+								<i class="fa-regular fa-lightbulb"></i>
+								<span>Why It Matters</span>
+							</div>
+							<h3>Protect. Preserve. Provide.</h3>
+							<p>Security in a sustainable world means protecting people, resources, infrastructure, and ecosystems together. Responsible systems reduce risk while preserving long-term access to essentials.</p>
+							<p>This area connects environmental stewardship with safer communities, smarter monitoring, and practical protection for the places and resources we depend on.</p>
+						</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -1118,22 +1193,22 @@
 			<div class="container">
 				<div class="srex-sponsor__items wow fadeInUp" data-wow-duration="1.5s">
 					<a href="{{ route('coming-soon.index') }}" class="zirox-brand__items-item">
-						<img src="assets/images/sponsor/sponsor-2.png" alt="Envato">
+						<img src="assets/images/sponsor/sponsor-2.png" alt="sponsor">
 					</a>
 					<a href="{{ route('coming-soon.index') }}" class="zirox-brand__items-item">
-						<img src="assets/images/sponsor/sponsor-3.png" alt="Envato">
+						<img src="assets/images/sponsor/sponsor-3.png" alt="sponsor">
 					</a>
 					<a href="{{ route('coming-soon.index') }}" class="zirox-brand__items-item">
-						<img src="assets/images/sponsor/sponsor-4.png" alt="Envato">
+						<img src="assets/images/sponsor/sponsor-4.png" alt="sponsor">
 					</a>
 					<a href="{{ route('coming-soon.index') }}" class="zirox-brand__items-item">
-						<img src="assets/images/sponsor/sponsor-2.png" alt="Envato">
+						<img src="assets/images/sponsor/sponsor-2.png" alt="sponsor">
 					</a>
 					<a href="{{ route('coming-soon.index') }}" class="zirox-brand__items-item">
-						<img src="assets/images/sponsor/sponsor-3.png" alt="Envato">
+						<img src="assets/images/sponsor/sponsor-3.png" alt="sponsor">
 					</a>
 					<a href="{{ route('coming-soon.index') }}" class="zirox-brand__items-item">
-						<img src="assets/images/sponsor/sponsor-4.png" alt="Envato">
+						<img src="assets/images/sponsor/sponsor-4.png" alt="sponsor">
 					</a>
 				</div>
 			</div>
@@ -1153,9 +1228,7 @@
 							Got Questions? We’ve Got Answers.
 						</h2>
 						<p class="mb-5 mt-3">
-							It is a long established fact that a reader will be
-							distracted by the readable content of a page when
-							looking at its layout
+							Practical answers for organizations, startups, and communities building cleaner systems and measurable environmental impact.
 						</p>
 					</div>
 				</div>
@@ -1176,7 +1249,7 @@
 										<div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
 											<div class="accordion-header__left">
 												<p class="accordion-header__left__badge">01</p>
-												<h3>What is equality and solidarity?</h3>
+												<h3>How can sustainability reduce operating costs?</h3>
 											</div>
 											<i class="fa-solid fa-angle-down open"></i>
 											<i class="fa-solid fa-angle-up close"></i>
@@ -1184,7 +1257,7 @@
 									</div>
 									<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faq">
 										<div class="accordion-body">
-											The generated is therefore always free from repetition, injected humour, or words etc.
+											Sustainability reduces waste, energy use, and resource inefficiency. Cleaner operations often lower utility costs, improve compliance readiness, and create long-term value for teams, customers, and communities.
 										</div>
 									</div>
 								</div>
@@ -1193,7 +1266,7 @@
 										<div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
 											<div class="accordion-header__left">
 												<p class="accordion-header__left__badge">02</p>
-												<h3>How to inspire humanity?</h3>
+												<h3>What makes a green strategy measurable?</h3>
 											</div>
 											<i class="fa-solid fa-angle-down open"></i>
 											<i class="fa-solid fa-angle-up close"></i>
@@ -1201,7 +1274,7 @@
 									</div>
 									<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faq">
 										<div class="accordion-body">
-											The generated is therefore always free from repetition, injected humour, or words etc.
+											A measurable strategy connects clear goals with trackable indicators such as carbon savings, water conservation, renewable energy adoption, waste reduction, and community benefit.
 										</div>
 									</div>
 								</div>
@@ -1210,7 +1283,7 @@
 										<div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo" role="button">
 											<div class="accordion-header__left">
 												<p class="accordion-header__left__badge">03</p>
-												<h3>Where are better living programs?</h3>
+												<h3>How can communities join sustainability projects?</h3>
 											</div>
 											<i class="fa-solid fa-angle-down open"></i>
 											<i class="fa-solid fa-angle-up close"></i>
@@ -1218,7 +1291,7 @@
 									</div>
 									<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faq">
 										<div class="accordion-body">
-											The generated is therefore always free from repetition, injected humour, or words etc.
+											Communities can participate through awareness programs, local partnerships, responsible consumption, clean energy adoption, and shared initiatives that protect resources while improving quality of life.
 										</div>
 									</div>
 								</div>
@@ -1262,7 +1335,7 @@
 		<!-- NewsLetter Section End -->
 
 		<!-- Stats Section Start -->
-		<div class="srex-stats srex-section">
+		<!-- <div class="srex-stats srex-section">
 			<div class="container">
 				<div class="srex-stats__items wow ud-fade-in-up" data-wow-duration="1.3s">
 					<div class="row">
@@ -1325,7 +1398,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- Stats Section End -->
 
 		<!-- Testimonial Section Start-->

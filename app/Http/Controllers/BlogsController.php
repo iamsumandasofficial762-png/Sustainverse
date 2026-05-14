@@ -672,7 +672,7 @@ class BlogsController extends Controller
         $path = $this->storeEditorImage($request->file('upload'));
 
         return response()->json([
-            'url' => asset($path),
+            'url' => '/'.ltrim($path, '/'),
         ]);
     }
 
@@ -734,6 +734,17 @@ class BlogsController extends Controller
 
     private function sanitizeEditorContent(string $content): string
     {
-        return Purifier::clean($content);
+        return $this->normalizeEditorImageUrls(Purifier::clean($this->normalizeEditorImageUrls($content)));
+    }
+
+    private function normalizeEditorImageUrls(string $content): string
+    {
+        return preg_replace_callback(
+            '/\b(src|href)=([\'"])(https?:)?\/\/[^\'"]+(\/uploads\/editor\/[^\'"]+)\2/i',
+            function ($matches) {
+                return $matches[1].'='.$matches[2].$matches[4].$matches[2];
+            },
+            $content
+        );
     }
 }

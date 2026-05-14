@@ -5,7 +5,7 @@
         <!-- Top -->
         <div class="row justify-content-between align-items-center srex-footer-one__top">
             <div class="col-6 col-lg-6 col-md-6">
-                <img src="{{ asset('assets/images/logo/sustain-verse-logo-dark.png') }}" alt="Logo" style="width: 220px;">
+                <img src="{{ asset('assets/images/logo/sustain-verse-logo-dark.png') }}" alt="sustain-verse-logo" style="width: 220px;">
             </div>
 
             <div class="col-lg-6 col-6 col-md-6">
@@ -90,7 +90,7 @@
                             <li><a href="{{ route('blog.category', 'india') }}" class="ms-3">India</a></li>
                             <li><a href="{{ route('blog.category', 'uae') }}" class="ms-3">UAE</a></li>
                             <li><a href="{{ route('blog.category', 'africa') }}" class="ms-3">Africa</a></li>
-                            <li><a href="{{ route('blog.category', 'asia') }}" class="ms-3">Ashia</a></li>
+                            <li><a href="{{ route('blog.category', 'asia') }}" class="ms-3">Asia</a></li>
                             <li><a href="{{ route('blog.category', 'special-days') }}" class="ms-3">Speacial day</a></li>
                         </ul>
                     </div>
@@ -117,7 +117,7 @@
         <div class="srex-footer__bottom">
             <div class="row">
                 <div class="col-12 col-md-5">
-                    <p>&copy; {{ date('Y') }} Ebluesoft | All Rights Reserved</p>
+                    <p>&copy; {{ date('Y') }} SustainVerse | All Rights Reserved</p>
                 </div>
                 <!-- <div class="col-12 col-md-2">
                     <ul class="srex-footer__bottom__links">

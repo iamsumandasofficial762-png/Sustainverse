@@ -218,6 +218,10 @@
 	 * Filter
 	 */
 	if ($("#srex-ho-filter").length) {
+		const portfolioSection = $("[data-portfolio-section]");
+		const setPortfolioLayout = function (filterValue) {
+			portfolioSection.toggleClass("srex-portfolio--detail", filterValue !== "all");
+		};
 		const revealPortfolioItems = function () {
 			$("#srex-ho-filter .filter-item:visible .srex-portfolio__item").css({
 				visibility: "visible",
@@ -242,9 +246,24 @@
 		});
 
 		$(".srex-portfolio .filter").on("click", function () {
+			setPortfolioLayout($(this).data("filter"));
 			setTimeout(revealPortfolioItems, 120);
 			setTimeout(revealPortfolioItems, 420);
 		});
+
+		$(".srex-portfolio__media-link[data-portfolio-card-filter]").on("click", function (event) {
+			const targetFilter = $(this).data("portfolio-card-filter");
+			const targetControl = $('.srex-portfolio .filter[data-filter="' + targetFilter + '"]');
+
+			if (!targetControl.length) {
+				return;
+			}
+
+			event.preventDefault();
+			targetControl.trigger("click");
+		});
+
+		setPortfolioLayout($(".srex-portfolio .filter.active").data("filter") || "all");
 	}
 
 	/**

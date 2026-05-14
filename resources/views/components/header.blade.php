@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Page Title -->
-    <title>{{ $title ?? ($__env->yieldContent('title') ?: 'Solarex - Solar & Renewable Energy') }}</title>
+    <title>{{ $title ?? ($__env->yieldContent('title') ?: 'sustain-verse ') }}</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('assets/images/fav-icon.png') }}">
@@ -44,7 +44,7 @@
         <nav class="main-nav ud-main-menu ud-main-menu--home-one d-flex align-items-center justify-content-between">
             <div class="ud-main-menu__logo">
                 <a href="{{ route('dashboard.index') }}">
-                    <img src="{{ asset('assets/images/logo/sustain verse logo.png') }}" alt="SustainVerse" class="logo-box">
+                    <img src="{{ asset('assets/images/logo/sustain verse logo.png') }}" alt="sustain-verse-logo" class="logo-box">
                 </a>
             </div>
             <ul class="nav-list">
@@ -75,7 +75,7 @@
                             <div class="mega-col highlight-box">
                                 <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                 <div class="news-btn-box">
-                                    <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}"><i class="fas fa-phone srex-info-box__item__number me-2"></i>Partner With SustainVerse</a>
+                                    <a class="btn outline mt-2" href="{{ route('contact.index') }}"><i class="fas fa-phone srex-info-box__item__number me-2"></i>Partner With SustainVerse</a>
                                 </div>
                             </div>
 
@@ -110,8 +110,8 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline" href="{{ route('coming-soon.index') }}">Submit Press release</a>
-                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Subscribe to Newsletter</a>
+                                            <a class="btn outline" href="{{ route('contact.index') }}">Submit Press release</a>
+                                            <a class="btn outline mt-2" href="{{ route('contact.index') }}">Subscribe to Newsletter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -148,8 +148,8 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline" href="{{ route('coming-soon.index') }}">Submit News Tip</a>
-                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Subscribe to Newsletter</a>
+                                            <a class="btn outline" href="{{ route('contact.index') }}">Submit News Tip</a>
+                                            <a class="btn outline mt-2" href="{{ route('contact.index') }}">Subscribe to Newsletter</a>
                                         </div>
                                     </div>
                                 </div>
@@ -197,8 +197,8 @@
                             <div class="mega-col highlight-box">
                                 <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                 <div class="news-btn-box">
-                                    <a class="btn outline" href="{{ route('coming-soon.index') }}">Pitch an Interview</a>
-                                    <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Profile</a>
+                                    <a class="btn outline" href="{{ route('contact.index') }}">Pitch an Interview</a>
+                                    <a class="btn outline mt-2" href="{{ route('contact.index') }}">Profile</a>
                                 </div>
                             </div>
                         </div>
@@ -232,8 +232,8 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline" href="{{ route('coming-soon.index') }}">Request Advisory</a>
-                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">List a CSR Project</a>
+                                            <a class="btn outline" href="{{ route('contact.index') }}">Request Advisory</a>
+                                            <a class="btn outline mt-2" href="{{ route('contact.index') }}">List a CSR Project</a>
                                         </div>
                                     </div>
                                 </div>
@@ -295,8 +295,8 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Nominate</a>
-                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Register</a>
+                                            <a class="btn outline mt-2" href="{{ route('contact.index') }}">Nominate</a>
+                                            <a class="btn outline mt-2" href="{{ route('contact.index') }}">Register</a>
                                         </div>
                                     </div>
                                 </div>
@@ -345,7 +345,7 @@
                                     <div class="mega-col highlight-box">
                                         <h4><strong><i class="fa-solid fa-screwdriver-wrench me-1"></i>Utility</strong></h4>
                                         <div class="news-btn-box">
-                                            <a class="btn outline mt-2" href="{{ route('coming-soon.index') }}">Apply to Masterclass</a>
+                                            <a class="btn outline mt-2" href="{{ route('contact.index') }}">Apply to Masterclass</a>
                                         </div>
                                     </div>
                                 </div>
@@ -387,7 +387,7 @@
         <div class="ud-side-popup__header">
             <div class="ud-side-popup__header-logo">
                 <a href="{{ route('dashboard.index') }}">
-                    <img src="{{ asset('assets/images/logo/sustain verse logo.png') }}" alt="Solarex">
+                    <img src="{{ asset('assets/images/logo/sustain verse logo.png') }}" alt="sustain-verse-logo">
                 </a>
             </div>
             <button class="side-popup-close">

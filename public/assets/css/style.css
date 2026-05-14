@@ -1,10 +1,10 @@
 /**
 ===========================
-Template: Solarex - Solar & Renewable Energy HTML Template
+Template: sustain-verse - Solar & Renewable Energy HTML Template
 File: Default Styles
 Author: ultraDevs
 Author URI: https://themeforest.net/user/ultradevs
-Description: Solarex - Solar & Renewable Energy HTML Template
+Description: sustain-verse - Solar & Renewable Energy HTML Template
 Version: 1.0.0
 ===========================
 
@@ -429,7 +429,7 @@ p {
     font-style: normal;
     font-weight: 500;
     line-height: 28px;
-    color: #333;
+    color: #000000;
 }
 @media (max-width: 767px) {
     p {
@@ -780,6 +780,9 @@ input:focus {
 }
 .srex-info-box--feature-box .srex-info-box__item {
     background: #fff;
+    min-height: 347px;
+    display: flex;
+    flex-direction: column;
 }
 .srex-info-box--feature-box .srex-info-box__item:hover h3,
 .srex-info-box--feature-box
@@ -794,6 +797,79 @@ input:focus {
 }
 .srex-info-box--feature-box .srex-info-box__item__img {
     background: #1d8f2c;
+}
+.srex-info-box--feature-box .srex-info-box__more {
+    margin-top: auto;
+}
+.ecosystem-feature-carousel .row {
+    align-items: stretch;
+}
+.ecosystem-feature-carousel .col-md-6 {
+    display: flex;
+}
+.ecosystem-feature-carousel .srex-info-box__item {
+    width: 100%;
+}
+.ecosystem-feature-slide {
+    display: none;
+}
+.ecosystem-feature-slide--active {
+    display: block;
+    animation: ecosystemSlideIn 0.65s ease both;
+}
+.ecosystem-feature-slide--active .srex-info-box__item {
+    animation: ecosystemCardRise 0.6s ease both;
+}
+.ecosystem-feature-slide--active .col-md-6:nth-child(2) .srex-info-box__item {
+    animation-delay: 0.08s;
+}
+.ecosystem-feature-slide--active .col-md-6:nth-child(3) .srex-info-box__item {
+    animation-delay: 0.16s;
+}
+.ecosystem-feature-slide--active .col-md-6:nth-child(4) .srex-info-box__item {
+    animation-delay: 0.24s;
+}
+@keyframes ecosystemSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes ecosystemCardRise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.ecosystem-feature-carousel__controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 4px;
+}
+.ecosystem-feature-carousel__control {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #1d8f2c;
+    border-radius: 50%;
+    background: #fff;
+    color: #1d8f2c;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.ecosystem-feature-carousel__control:hover {
+    background: #1d8f2c;
+    color: #fff;
 }
 
 /*------------------------------------
@@ -901,7 +977,7 @@ input:focus {
 }
 .srex-accordion .accordion-body {
     font-size: 16px;
-    color: #878c8f;
+    color: #fff;
     line-height: 24px;
     background: transparent;
     border-bottom-left-radius: 30px;
@@ -2485,6 +2561,16 @@ input:focus {
     display: block;
     height: 680px;
 }
+.dashboard-about-us .srex-section__head__desc,
+.dashboard-about-us .srex-icon-list ul li p {
+    color: #000;
+}
+.dashboard-about-us .srex-icon-list ul li p {
+    transition: color 0.3s ease-in-out;
+}
+.dashboard-about-us .srex-icon-list ul li:hover p {
+    color: #1d8f2c;
+}
 @media (max-width: 767px) {
     .dashboard-about-us {
         padding-top: 35px;
@@ -2587,6 +2673,15 @@ input:focus {
     line-height: 47.6px; /* 125.263% */
     text-transform: capitalize;
     margin-bottom: 20px;
+}
+.srex-section-bottom__right__desc {
+    color: #000;
+}
+.srex-section-bottom__right .srex-icon-list h3 {
+    transition: color 0.3s ease-in-out;
+}
+.srex-section-bottom__right .srex-icon-list li:hover h3 {
+    color: #1d8f2c;
 }
 @media (max-width: 767px) {
     .srex-section-bottom__right .srex-icon-list {
@@ -3084,6 +3179,9 @@ input:focus {
     background-position: bottom right;
     padding: 20px 0 60px 0;
 }
+.srex-contact__right .srex-section__head > p {
+    color: #000;
+}
 
 /*------------------------------------
 	14/ Portfolio
@@ -3171,6 +3269,128 @@ input:focus {
     overflow: hidden;
     border-radius: 20px;
     margin-bottom: 30px;
+}
+.srex-portfolio__media-link {
+    display: block;
+}
+.srex-portfolio__content-card {
+    display: none;
+}
+.srex-portfolio--detail #srex-ho-filter .filter-item {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+}
+.srex-portfolio--detail .srex-portfolio__feature {
+    display: grid;
+    grid-template-columns: minmax(280px, 430px) minmax(0, 1fr);
+    gap: 32px;
+    align-items: stretch;
+    max-width: 1400px;
+    margin: 0 auto 30px;
+}
+.srex-portfolio--detail .srex-portfolio__item {
+    height: 100%;
+    min-height: 430px;
+    margin-bottom: 0;
+}
+.srex-portfolio--detail .srex-portfolio__item img {
+    height: 100%;
+    object-fit: cover;
+}
+.srex-portfolio--detail .srex-portfolio__content-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 430px;
+    padding: 60px 70px;
+    background: #fff;
+    border: 1px solid rgba(36, 35, 29, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 18px 38px rgba(36, 35, 29, 0.14);
+    animation: portfolioContentIn 0.5s ease both;
+}
+.srex-portfolio__content-badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 34px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    background: rgba(29, 143, 44, 0.12);
+    color: #1d8f2c;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.srex-portfolio__content-card h3 {
+    max-width: 840px;
+    margin-bottom: 26px;
+    color: #0d1828;
+    font-size: 58px;
+    line-height: 1.08;
+    font-weight: 800;
+}
+.srex-portfolio__content-card h3::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin-top: 28px;
+    background: #1d8f2c;
+}
+.srex-portfolio__content-card p {
+    max-width: 900px;
+    margin-bottom: 24px;
+    color: #263245;
+    font-size: 22px;
+    line-height: 1.65;
+}
+@keyframes portfolioContentIn {
+    from {
+        opacity: 0;
+        transform: translateX(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    .srex-portfolio--detail .srex-portfolio__feature {
+        grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+        gap: 24px;
+    }
+    .srex-portfolio--detail .srex-portfolio__content-card {
+        padding: 42px;
+    }
+    .srex-portfolio__content-card h3 {
+        font-size: 42px;
+    }
+    .srex-portfolio__content-card p {
+        font-size: 18px;
+    }
+}
+@media (max-width: 767px) {
+    .srex-portfolio--detail .srex-portfolio__feature {
+        display: block;
+    }
+    .srex-portfolio--detail .srex-portfolio__item {
+        min-height: auto;
+        margin-bottom: 18px;
+    }
+    .srex-portfolio--detail .srex-portfolio__content-card {
+        min-height: auto;
+        padding: 30px 24px;
+    }
+    .srex-portfolio__content-card h3 {
+        font-size: 32px;
+    }
+    .srex-portfolio__content-card p {
+        font-size: 16px;
+    }
 }
 @media (max-width: 767px) {
     .srex-portfolio__item {
@@ -3587,6 +3807,8 @@ input:focus {
 ------------------------------------*/
 .srex-question {
     background: url(../images/home-one/faq/faq-bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
     padding: 120px 0;
 }
 @media (max-width: 767px) {
@@ -5635,6 +5857,9 @@ input:focus {
     font-weight: 700;
     font-size: 36px;
 }
+.section-top-title p {
+    color: #000;
+}
 .section-top-title ul {
 }
 .section-top-title ul li {
@@ -5786,7 +6011,11 @@ input:focus {
     margin-bottom: 30px;
 }
 .blog-content {
+    color: #000;
     overflow-wrap: break-word;
+}
+.blog-content :where(p, span, div, li, blockquote, strong, em, h1, h2, h3, h4, h5, h6) {
+    color: #000 !important;
 }
 .blog-content > *:last-child {
     margin-bottom: 0;
@@ -7198,11 +7427,14 @@ body {
 
 .hero-section .container-fluid .primary-hero {
     position: relative;
+    height: 600px;
+    min-height: 600px;
     max-height: 600px;
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
     border: 2px solid #f7f7f7;
+    background: #24231d;
     transition: box-shadow 0.3s ease;
 }
 
@@ -7218,6 +7450,7 @@ body {
 .hero-section .container-fluid .primary-hero a {
     display: block;
     height: 100%;
+    min-height: inherit;
 }
 
 .hero-section .container-fluid .primary-hero:hover {
@@ -7298,11 +7531,20 @@ body {
 .hero-section .container-fluid .secondary-hero {
     position: relative;
     height: 292px;
+    min-height: 292px;
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
     border: 2px solid #f7f7f7;
+    background: #24231d;
     transition: box-shadow 0.3s ease;
+}
+
+.hero-section .container-fluid .secondary-hero a,
+.hero-section .container-fluid .sponser-hero a {
+    display: block;
+    height: 100%;
+    min-height: inherit;
 }
 
 .hero-section .container-fluid .secondary-hero:hover {
@@ -7359,12 +7601,14 @@ body {
     position: relative;
     margin-top: 12px;
     height: 292px;
+    min-height: 292px;
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
     border: 5px solid #d4af37;
     outline: 1px solid #fff; /* classic gold */
     overflow: hidden;
+    background: #24231d;
     transition: box-shadow 0.3s ease;
 }
 
@@ -7474,6 +7718,7 @@ body {
     .hero-section .container-fluid .secondary-hero,
     .hero-section .container-fluid .sponser-hero {
         height: 244px;
+        min-height: 244px;
     }
 
     .primary-hero .hero-overlay,
@@ -7526,12 +7771,14 @@ body {
 
     .hero-section .container-fluid .primary-hero {
         height: clamp(460px, 42vw, 600px);
+        min-height: clamp(460px, 42vw, 600px);
         max-height: none;
     }
 
     .hero-section .container-fluid .secondary-hero,
     .hero-section .container-fluid .sponser-hero {
         height: calc((clamp(460px, 42vw, 600px) - 16px) / 2);
+        min-height: calc((clamp(460px, 42vw, 600px) - 16px) / 2);
     }
 
     .hero-section .container-fluid .sponser-hero {
@@ -8179,6 +8426,7 @@ body {
 .eco-card {
     position: relative;
     overflow: hidden;
+    scroll-margin-top: 120px;
     min-height: 335px;
     background: linear-gradient(90deg, #fffdf8 0%, #fbf8e8 54%, #f4f1d2 100%);
     border: 1px solid rgba(45, 84, 58, 0.08);
