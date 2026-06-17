@@ -11,6 +11,7 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 use Mews\Purifier\Facades\Purifier;
 use Illuminate\Support\Facades\Validator;
 
@@ -102,16 +103,67 @@ class BlogsController extends Controller
         ]);
     }
 
-    public function list() {
+    public function list(Request $request) {
 
         // FOR ALL BLOGS
+        $search = trim($request->get('search', ''));
+        $searchTerms = $this->normalizePostSearchKeyword($search);
+        $databaseDriver = DB::connection()->getDriverName();
+        $hasSlugColumn = Schema::hasColumn('blogs', 'slug');
+
         $blogs = Blog::with('categories')
-        ->where('is_delete', 0)
-        ->orderBy('created_at', 'DESC')
-        ->paginate(10);
+            ->where('is_delete', 0)
+            ->when(!empty($searchTerms), function ($query) use ($searchTerms, $databaseDriver, $hasSlugColumn) {
+                $query->where(function ($query) use ($searchTerms, $databaseDriver, $hasSlugColumn) {
+                    foreach ($searchTerms as $term) {
+                        $query->orWhere('title', 'LIKE', '%'.$term.'%')
+                            ->orWhere('author', 'LIKE', '%'.$term.'%')
+                            ->orWhere('created_at', 'LIKE', '%'.$term.'%')
+                            ->orWhereHas('categories', function ($query) use ($term) {
+                                $query->where('category_name', 'LIKE', '%'.$term.'%');
+                            });
+
+                        if ($hasSlugColumn) {
+                            $query->orWhere('slug', 'LIKE', '%'.$term.'%');
+                        }
+
+                        if (in_array($databaseDriver, ['mysql', 'mariadb'], true)) {
+                            $query->orWhereRaw("DATE_FORMAT(created_at, '%d %b %Y') LIKE ?", ['%'.$term.'%']);
+                        }
+                    }
+                });
+            })
+            ->when($search !== '' && empty($searchTerms), function ($query) use ($search, $databaseDriver, $hasSlugColumn) {
+                $query->where(function ($query) use ($search, $databaseDriver, $hasSlugColumn) {
+                    $query->where('title', 'LIKE', '%'.$search.'%')
+                        ->orWhere('author', 'LIKE', '%'.$search.'%')
+                        ->orWhere('created_at', 'LIKE', '%'.$search.'%')
+                        ->orWhereHas('categories', function ($query) use ($search) {
+                            $query->where('category_name', 'LIKE', '%'.$search.'%');
+                        });
+
+                    if ($hasSlugColumn) {
+                        $query->orWhere('slug', 'LIKE', '%'.$search.'%');
+                    }
+
+                    if (in_array($databaseDriver, ['mysql', 'mariadb'], true)) {
+                        $query->orWhereRaw("DATE_FORMAT(created_at, '%d %b %Y') LIKE ?", ['%'.$search.'%']);
+                    }
+                });
+            })
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10)
+            ->appends(['search' => $search]);
+
+        if ($request->ajax()) {
+            return view('admin-blog.partials.table', [
+                'blogs' => $blogs,
+            ]);
+        }
 
         return view('admin-blog.blogs-list',[
             'blogs' => $blogs,
+            'search' => $search,
         ]);
     }
 
@@ -236,6 +288,7 @@ class BlogsController extends Controller
         // VALIDATION RULES
         $rules = [
             'title' => 'required|string|min:3|max:255',
+            'author' => 'nullable|string|max:255',
             'content' => 'required|string|min:3',
             'new_tags' => 'nullable|array',
             'new_tags.*' => 'string|max:50',
@@ -301,7 +354,7 @@ class BlogsController extends Controller
         $blog = new Blog();
         $blog->title = $request->title;
         $blog->content = $this->sanitizeEditorContent($request->content);
-        $blog->author = $request->author;
+        $blog->author = $request->filled('author') ? trim($request->author) : 'Admin';
         $blog->slug = $slug;
 
         // IMAGE UPLOAD
@@ -542,16 +595,22 @@ class BlogsController extends Controller
 
     public function update(Request $request, $slug) {
 
+        // FETCH BLOG
+        $blog = Blog::where('slug', $slug)
+            ->where('is_delete', 0)
+            ->firstOrFail();
+
         // VALIDATION RULES
         $rules = [
             'title' => 'required|string|min:3|max:255',
+            'author' => 'nullable|string|max:255',
             'edit_slug' => 'nullable|string|max:255',
             'content' => 'required|string|min:3',
             'new_tags' => 'nullable|array',
             'new_tags.*' => 'string|max:50',
             'tags' => 'nullable|array',
             'tags.*' => 'exists:tags,id',
-            'image' => 'nullable|file|image|mimes:jpg,jpeg,png,gif,webp|max:10240',
+            'image' => ($blog->image ? 'nullable' : 'required').'|file|image|mimes:jpg,jpeg,png,gif,webp|max:10240',
             'category' => 'required|array|min:1',
             'category.*' => 'exists:categories,id',
         ];
@@ -596,11 +655,6 @@ class BlogsController extends Controller
 
         $tagIds = array_values(array_unique($tagIds));
 
-        // FETCH BLOG
-        $blog = Blog::where('slug', $slug)
-            ->where('is_delete', 0)
-            ->firstOrFail();
-
         // CONVERT STRING TO SLUG
         $slugSource = $request->filled('edit_slug')
             ? $request->edit_slug
@@ -629,7 +683,7 @@ class BlogsController extends Controller
         // SAVING BLOG
         $blog->title = $request->title;
         $blog->content = $this->sanitizeEditorContent($request->content);
-        $blog->author = $request->author;
+        $blog->author = $request->filled('author') ? trim($request->author) : 'Admin';
         $blog->slug = $slug;
             
         // UPLOAD IMAGE
@@ -730,6 +784,134 @@ class BlogsController extends Controller
         $image->move($uploadPath, $imageName);
 
         return 'uploads/editor/'.$imageName;
+    }
+
+    private function normalizePostSearchKeyword(?string $search): array
+    {
+        $search = $this->cleanSearchText((string) $search);
+
+        if ($search === '') {
+            return [];
+        }
+
+        $terms = [];
+        $addTerm = function (?string $term) use (&$terms) {
+            $term = $this->cleanSearchText((string) $term);
+
+            if ($term === '') {
+                return;
+            }
+
+            $terms[] = $term;
+
+            $apostropheVariant = str_replace("'", '’', $term);
+            if ($apostropheVariant !== $term) {
+                $terms[] = $apostropheVariant;
+            }
+
+            $plainWords = $this->plainSearchWords($term);
+            if ($plainWords !== '' && $plainWords !== $term) {
+                $terms[] = $plainWords;
+            }
+        };
+
+        $addTerm($search);
+
+        if (preg_match('/^\[([^\]]+)\]\(([^)]+)\)$/u', $search, $matches)) {
+            $title = $matches[1];
+            $url = $matches[2];
+
+            $addTerm($title);
+            $addTerm($url);
+            $addTerm($this->extractSlugFromSearchText($url));
+            $addTerm($this->slugToWords($this->extractSlugFromSearchText($url)));
+        }
+
+        $slug = $this->extractSlugFromSearchText($search);
+
+        if ($slug !== '') {
+            $addTerm($slug);
+            $addTerm($this->slugToWords($slug));
+        }
+
+        $withoutMarkdown = preg_replace('/[\[\]\(\)]/u', ' ', $search);
+        $withoutUrlParts = preg_replace(
+            '~https?://|127\.0\.0\.1:\d+|localhost:\d+|/home/blog/~iu',
+            ' ',
+            $withoutMarkdown
+        );
+
+        $addTerm($withoutUrlParts);
+
+        return array_values(array_unique(array_filter($terms, function ($term) {
+            return mb_strlen($term) >= 2;
+        })));
+    }
+
+    private function cleanSearchText(string $text): string
+    {
+        $text = html_entity_decode($text, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $text = rawurldecode($text);
+        $text = str_replace(["\r", "\n", "\t", "\u{00A0}"], ' ', $text);
+        $text = str_replace(["‘", "’", "´", "`"], "'", $text);
+        $text = preg_replace('/\s+/u', ' ', $text);
+
+        return trim($text);
+    }
+
+    private function extractSlugFromSearchText(string $text): string
+    {
+        $text = $this->cleanSearchText($text);
+
+        if ($text === '') {
+            return '';
+        }
+
+        if (preg_match('/\((https?:\/\/[^)]+)\)$/iu', $text, $matches)) {
+            $text = $matches[1];
+        }
+
+        $path = parse_url($text, PHP_URL_PATH);
+
+        if (is_string($path) && $path !== '') {
+            $text = $path;
+        }
+
+        $text = trim($text, " \t\n\r\0\x0B/");
+
+        if ($text === '') {
+            return '';
+        }
+
+        $parts = explode('/', $text);
+        $slug = end($parts);
+        $slug = $this->cleanSearchText((string) $slug);
+
+        if (Str::contains($slug, ' ') || !Str::contains($slug, '-')) {
+            return '';
+        }
+
+        return $slug;
+    }
+
+    private function slugToWords(?string $slug): string
+    {
+        $slug = $this->cleanSearchText((string) $slug);
+
+        if ($slug === '') {
+            return '';
+        }
+
+        return trim(preg_replace('/\s+/u', ' ', str_replace('-', ' ', $slug)));
+    }
+
+    private function plainSearchWords(string $text): string
+    {
+        $text = $this->cleanSearchText($text);
+        $text = preg_replace('/https?:\/\/\S+/iu', ' ', $text);
+        $text = preg_replace('/[^\pL\pN]+/u', ' ', $text);
+
+        return trim(preg_replace('/\s+/u', ' ', $text));
     }
 
     private function sanitizeEditorContent(string $content): string

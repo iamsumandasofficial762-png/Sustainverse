@@ -18,102 +18,32 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div class="row">
-                                    <div class="col-md-10">
+                                <div class="row align-items-center gy-3">
+                                    <div class="col-md-6">
                                         <h5>ARTICLES</h5>
                                     </div>
                                     
-                                    <div class="col-md-2  d-flex justify-content-end">
-                                        <a href="{{ route('posts.add') }}" class="btn btn-primary">Add post</a>
+                                    <div class="col-md-6">
+                                        <div class="admin-post-toolbar d-flex flex-column flex-md-row justify-content-md-end gap-2">
+                                            <div class="position-relative admin-post-search">
+                                                <input
+                                                    type="search"
+                                                    id="adminPostSearch"
+                                                    class="form-control"
+                                                    placeholder="Search by title, author, category..."
+                                                    value="{{ $search ?? request('search') }}"
+                                                    autocomplete="off"
+                                                >
+                                                <small id="adminPostSearchStatus" class="text-muted d-none">Searching...</small>
+                                            </div>
+                                            <a href="{{ route('posts.add') }}" class="btn btn-primary admin-post-add-btn">Add Post</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body assign-table pt-0" id="adminBlogList">
-                                <div class="table-responsive">
-                                     <table class="table table-bordernone table-hover">
-                                        <tbody>
-                                            <tr class="table-dark" style="border-bottom: solid 1px #ccc;">
-                                                <td>
-                                                    <div class="d-flex justify-content-center">
-                                                        <h6 class="fs-5">SL No.</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-center">
-                                                        <h6 class="fs-5">Title</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-center">
-                                                        <h6 class="fs-5">Author</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-center">
-                                                        <h6 class="fs-5">Category</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-center">
-                                                        <h6 class="fs-5">Create</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-center">
-                                                        <h6 class="fs-5">Action</h6>
-                                                    </div>
-                                                </td>
-                                                
-                                            </tr>
-                                            @php
-                                                $level = 1;
-                                            @endphp
-                                            @foreach($blogs as $blog)
-                                                <tr style="border-bottom: solid 1px #ccc;">
-                                                    <td>
-                                                        <div class="d-flex justify-content-center">
-                                                            <h6>{{ $level }}</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <h6>{{ $blog->title }}</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <h6>{{ $blog->author }}</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td style="width: 600px;">
-                                                        <div class="box">
-                                                            <h6>{{ $blog->categories->pluck('category_name')->implode(', ') }}</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-center">
-                                                            <h6>{{ $blog->created_at->format('d M Y') }}</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-end">
-                                                            <a href="{{ route('edit.post',$blog->slug) }}" class="btn btn-warning"><i data-feather="edit"></i></a>
-                                                            <button onclick="confirmDelete('{{ route('delete.post',$blog->slug) }}')" class="btn btn-danger ms-2"><i data-feather="trash-2"></i></button>
-                                                            <!-- <a href="{{ route('delete.post',$blog->slug) }}" class="btn btn-danger ms-2"><i data-feather="trash-2"></i></a> -->
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @php
-                                                $level++; 
-                                            @endphp
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
+                                @include('admin-blog.partials.table', ['blogs' => $blogs])
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            {{ $blogs->links()}}
                         </div>
                     </div>
                 </div>
@@ -132,6 +62,142 @@
                     </div>
                 </div>
             </div>
+
+<style>
+    .admin-post-search {
+        width: 100%;
+    }
+
+    .admin-post-toolbar {
+        align-items: stretch;
+    }
+
+    .admin-post-add-btn {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    @media (min-width: 768px) {
+        .admin-post-toolbar {
+            align-items: flex-start;
+        }
+
+        .admin-post-search {
+            max-width: 360px;
+        }
+
+        #adminPostSearchStatus {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            line-height: 1.2;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('adminPostSearch');
+        const tableContainer = document.getElementById('adminBlogList');
+        const status = document.getElementById('adminPostSearchStatus');
+
+        if (!searchInput || !tableContainer) {
+            return;
+        }
+
+        let searchTimer = null;
+        let controller = null;
+
+        function setLoading(isLoading) {
+            if (status) {
+                status.classList.toggle('d-none', !isLoading);
+            }
+        }
+
+        function refreshFeatherIcons() {
+            if (window.feather) {
+                window.feather.replace();
+            }
+        }
+
+        function buildUrl(searchValue, pageUrl = null) {
+            const url = pageUrl ? new URL(pageUrl, window.location.origin) : new URL("{{ route('posts.list', [], false) }}", window.location.origin);
+
+            if (searchValue.length >= 2) {
+                url.searchParams.set('search', searchValue);
+            } else {
+                url.searchParams.delete('search');
+            }
+
+            return url;
+        }
+
+        function fetchPosts(pageUrl = null) {
+            const searchValue = searchInput.value.trim();
+            const url = buildUrl(searchValue, pageUrl);
+
+            if (controller) {
+                controller.abort();
+            }
+
+            controller = new AbortController();
+            const activeController = controller;
+            setLoading(true);
+
+            fetch(url.toString(), {
+                headers: {
+                    'Accept': 'text/html',
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+                signal: controller.signal,
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Search request failed.');
+                    }
+
+                    return response.text();
+                })
+                .then(html => {
+                    tableContainer.innerHTML = html;
+                    refreshFeatherIcons();
+                    window.history.replaceState({}, '', url.pathname + url.search);
+                })
+                .catch(error => {
+                    if (error.name !== 'AbortError') {
+                        console.error(error);
+                    }
+                })
+                .finally(() => {
+                    if (controller === activeController) {
+                        setLoading(false);
+                    }
+                });
+        }
+
+        searchInput.addEventListener('input', function () {
+            clearTimeout(searchTimer);
+
+            searchTimer = setTimeout(function () {
+                fetchPosts();
+            }, 300);
+        });
+
+        tableContainer.addEventListener('click', function (event) {
+            const link = event.target.closest('.pagination a');
+
+            if (!link) {
+                return;
+            }
+
+            event.preventDefault();
+            fetchPosts(link.href);
+        });
+    });
+</script>
 
             <!-- footer start -->
 <x-admin-footer>

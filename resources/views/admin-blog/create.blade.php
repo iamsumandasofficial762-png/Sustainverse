@@ -79,13 +79,26 @@
                                     <div class="invalid-feedback d-block">{{ $message }}</div>
                                 @enderror
                             </div>
+
+                            <div class="form-group mt-3">
+                                <label for="author"><h6 class="fs-5"><strong>Author</strong></h6></label>
+                                <input
+                                    id="author"
+                                    name="author"
+                                    type="text"
+                                    class="form-control @error('author') is-invalid @enderror"
+                                    placeholder="Enter Author Name"
+                                    value="{{ old('author', 'Admin') }}">
+                                @error('author')
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                                @enderror
+                            </div>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group mt-2">
-                                <input name="author" type="hidden" value="{{ old('author', 'admin') }}">
                                 <label for="content"><h6 class="fs-5"><strong>Content<span class="font-danger">*</span></strong></h6></label>
                                 <textarea
                                     id="content"
@@ -133,20 +146,10 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <div class="form-group mt-2">
-                                <label for="feturedImage"><h6 class="fs-5"><strong>Fetured Image<span class="font-danger">*</span></strong></h6></label>
-                                <input
-                                    id="feturedImage"
-                                    name="image"
-                                    type="file"
-                                    class="form-control @error('image') is-invalid @enderror"
-                                    accept=".jpg,.jpeg,.png,.gif,.webp,image/*"
-                                    required>
-                                <small class="text-muted d-block mt-2">Use JPG, PNG, GIF, or WEBP up to 10 MB.</small>
-                                @error('image')
-                                    <div class="invalid-feedback d-block">{{ $message }}</div>
-                                @enderror
-                            </div>
+                            @include('admin-blog.partials.featured-image-upload', [
+                                'inputId' => 'feturedImage',
+                                'required' => true,
+                            ])
                         </div>
                     </div>
 
@@ -155,9 +158,24 @@
                             <div class="form-group mt-2">
                                 <label for="category"><h6 class="fs-5"><strong>Category<span class="font-danger">*</span></strong></h6></label>
 
+                                <div class="category-search-panel">
+                                <div class="category-search-wrap position-relative">
+                                    <input
+                                        type="text"
+                                        class="form-control category-search-input"
+                                        placeholder="Search category..."
+                                        autocomplete="off">
+                                    <button type="button" class="category-search-clear d-none" aria-label="Clear category search">&times;</button>
+                                </div>
+
                                 <ul class="custom-list {{ $errors->has('category') || $errors->has('category.*') ? 'border border-danger rounded p-2' : '' }}">
                                     @foreach ($categories as $category)
-                                        <li class="category-item">
+                                        <li
+                                            class="category-item"
+                                            data-category-name="{{ $category->category_name }}"
+                                            data-category-id="{{ $category->id }}"
+                                            data-parent-id=""
+                                            data-level="parent">
                                             <input
                                                 type="checkbox"
                                                 name="category[]"
@@ -175,7 +193,12 @@
                                             <ul class="sub-list">
                                                 @foreach ($sub_categories as $sub)
                                                     @if ($category->id == $sub->parent_id)
-                                                        <li class="sub-category-item">
+                                                        <li
+                                                            class="sub-category-item"
+                                                            data-category-name="{{ $sub->category_name }}"
+                                                            data-category-id="{{ $sub->id }}"
+                                                            data-parent-id="{{ $category->id }}"
+                                                            data-level="child">
                                                             <input
                                                                 type="checkbox"
                                                                 name="category[]"
@@ -196,6 +219,9 @@
                                         </li>
                                     @endforeach
                                 </ul>
+                                <div class="category-no-results d-none">No category found.</div>
+                                </div>
+                                @include('admin-blog.partials.category-search-assets')
 
                                 <div>
                                     @error('category')

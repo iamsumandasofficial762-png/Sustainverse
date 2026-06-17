@@ -6280,6 +6280,11 @@ ul.blog_pagination li a:hover {
     max-height: 225px;
     overflow-y: auto;
     overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.categories ul::-webkit-scrollbar {
+    display: none;
 }
 .categories ul li {
 }
@@ -9336,15 +9341,20 @@ body {
     }
 
     .regional-news__tabs .nav-link {
-        gap: 9px;
+        gap: 6px;
+        font-size: 18px;
         min-height: 50px;
-        padding: 10px 14px;
+        padding: 10px 12px;
         white-space: nowrap;
     }
 
     .regional-news__tab-icon {
-        height: 24px;
-        width: 30px;
+        height: 18px;
+        width: 22px;
+    }
+
+    .regional-news__tab-icon i {
+        font-size: 20px;
     }
 
     .regional-news__tabs .nav-item:not(:last-child) .nav-link::before {
