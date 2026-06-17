@@ -405,8 +405,8 @@
 										alt="Medal"
 									>
 									<div class="srex-about-us-one__right__box__text">
-										<h2>15+</h2>
-										<p>Years of experience</p>
+										<h2>100%</h2>
+										<p>Green Energy Solutions</p>
 									</div>
 								</div>
 							</div>
@@ -1337,7 +1337,7 @@ Our primary strength lies in our specialized focus on cross-border sustainabilit
 		<!-- NewsLetter Section End -->
 
 		<!-- Stats Section Start -->
-		<div class="srex-stats srex-section">
+		<!-- <div class="srex-stats srex-section">
 			<div class="container">
 				<div class="srex-stats__items wow ud-fade-in-up" data-wow-duration="1.3s">
 					<div class="row">
@@ -1400,7 +1400,7 @@ Our primary strength lies in our specialized focus on cross-border sustainabilit
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- Stats Section End -->
 
 		<!-- Testimonial Section Start-->
