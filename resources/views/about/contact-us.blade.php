@@ -53,26 +53,40 @@
                                     <h4>- Message Us</h4>
                                     <h1>Send Us Message</h1>
                                 </div>
-                                <form action="">
+                                <x-message />
+                                <form action="{{ route('contact.submit') }}" method="POST">
+                                    @csrf
                                     <div class="row justify-content-center">
                                         <div class="col-md-12 col-12">
-                                            <input name="full-name" placeholder="Your Name" type="text" required>
+                                            <input name="name" placeholder="Your Name" type="text" value="{{ old('name') }}" required>
+                                            @error('name')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                         <div class="col-md-12 col-12">
-                                            <input name="email" placeholder="Email Address" type="email" required>
+                                            <input name="email" placeholder="Email Address" type="email" value="{{ old('email') }}" required>
+                                            @error('email')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
                                         <div class="col-md-12 col-12">
-                                            <input placeholder="Your Phone" type="tel" name="phone" required>
+                                            <input placeholder="Your Phone" type="tel" name="phone" value="{{ old('phone') }}">
+                                            @error('phone')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                             
                                         </div>
                                     </div>
                                     <div>
-                                        <textarea placeholder="Your Message" id="message" rows="5" name="message" required></textarea>
+                                        <textarea placeholder="Your Message" id="message" rows="5" name="message" required>{{ old('message') }}</textarea>
+                                        @error('message')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div>
-                                        <button type="button" class="srex-btn srex-btn--secondary">Send A Message</button>
+                                        <button type="submit" class="srex-btn srex-btn--secondary">Send A Message</button>
                                     </div>
                                 </form>
                             </div>

@@ -51,6 +51,7 @@ Route::post('/admin/posts/comment',[BlogsController::class,'comment'])->name('po
 
 // CONTACT
 Route::get('/about/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact-submit', [ContactController::class, 'submit'])->name('contact.submit');
 
 // TGS LIVE SEARCH
 Route::get('/admin/posts/tags/live-search', [TagsController::class, 'search'])->name('live.search');

@@ -963,23 +963,37 @@ Our primary strength lies in our specialized focus on cross-border sustainabilit
 				<div class="row">
 					<div class="col-lg-6 col-12">
 						<div class="srex-contact__left wow ud-fade-in-up" data-wow-duration="1.3s">
-							<form action="">
+							<x-message />
+							<form action="{{ route('contact.submit') }}" method="POST">
+								@csrf
 								<div class="row justify-content-center">
 									<div class="col-md-6 col-12">
-										<input name="full-name" placeholder="Your Name" type="text" required>
+										<input name="name" placeholder="Your Name" type="text" value="{{ old('name') }}" required>
+										@error('name')
+											<small class="text-danger">{{ $message }}</small>
+										@enderror
 									</div>
 									<div class="col-md-6 col-12">
-										<input name="email" placeholder="Email Address" type="text" required>
+										<input name="email" placeholder="Email Address" type="email" value="{{ old('email') }}" required>
+										@error('email')
+											<small class="text-danger">{{ $message }}</small>
+										@enderror
 									</div>
 								</div>
 								<div>
-									<input placeholder="Your Phone" type="text" name="phone" required>
+									<input placeholder="Your Phone" type="text" name="phone" value="{{ old('phone') }}">
+									@error('phone')
+										<small class="text-danger">{{ $message }}</small>
+									@enderror
 								</div>
 								<div>
-									<textarea placeholder="Your Message" id="message" rows="5" name="message" required></textarea>
+									<textarea placeholder="Your Message" id="message" rows="5" name="message" required>{{ old('message') }}</textarea>
+									@error('message')
+										<small class="text-danger">{{ $message }}</small>
+									@enderror
 								</div>
 								<div>
-									<button type="button" class="srex-btn srex-btn--secondary">
+									<button type="submit" class="srex-btn srex-btn--secondary">
 										Submit Now
 										<i class="fa-solid fa-arrow-right"></i>
 									</button>
